@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mental Health Authority</title>
+
+  <!-- Google Font: Open Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome for social icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+ 
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+   
+    <div class="logo">
+      <img src="img/logo.png" alt="Mental Health Authority Logo" />
+
+    </div>
+
+    <!-- Center: Navigation -->
+    <a class="mobile-top-helpline" href="tel:0800567567" aria-label="Call mental health helpline 0800 567 567">
+      <span class="mobile-top-helpline-label">Help Line</span>
+      <span class="mobile-top-helpline-number">0800 567 567</span>
+    </a>
+
+    <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-controls="mobileSidebar" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li class="about dropdown">
+          <button class="about-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+            About
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-label="About menu">
+            <li><a href="#" role="menuitem" onclick="event.preventDefault()">Roles &amp; Functions</a></li>
+            <li><a href="#" role="menuitem" onclick="event.preventDefault()">Our Team</a></li>
+            <li><a href="#" role="menuitem" onclick="event.preventDefault()">Organogram</a></li>
+            <li><a href="#" role="menuitem" onclick="event.preventDefault()">Health Partners</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="topbar-right">
+      <a class="topbar-helpline" href="tel:0800567567" aria-label="Call mental health helpline 0800 567 567">
+        <span class="topbar-helpline-label">24/7 Help Line</span>
+        <span class="topbar-helpline-number">0800 567 567</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+  <aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true" aria-label="Mobile navigation">
+    <div class="mobile-sidebar-header">
+      <img class="mobile-sidebar-logo" src="img/mha logo.png" alt="Mental Health Authority logo" />
+      <button class="mobile-close-btn" type="button" aria-label="Close menu">
+        ×
+      </button>
+    </div>
+
+    <ul class="mobile-nav-list">
+      <li><a href="#">Home</a></li>
+
+      <li class="mobile-about">
+        <button class="mobile-about-toggle" type="button" aria-expanded="false">
+          About
+        </button>
+        <ul class="mobile-dropdown" aria-label="About menu">
+          <li><a href="#" onclick="event.preventDefault()">Roles &amp; Functions</a></li>
+          <li><a href="#" onclick="event.preventDefault()">Our Team</a></li>
+          <li><a href="#" onclick="event.preventDefault()">Organogram</a></li>
+          <li><a href="#" onclick="event.preventDefault()">Health Partners</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#footer" class="mobile-contact-link">Contact</a></li>
+    </ul>
+
+    <div class="mobile-sidebar-social" aria-label="Social media links">
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </aside>
+
+  <section class="hero-slider" aria-label="Health programs slideshow">
+    <!-- Slide 1 -->
+    <article class="hero-slide is-active" data-slide-index="0">
+      <div class="hero-card">
+        <!-- Left: program content -->
+        <div class="hero-left">
+          <div class="hero-program-content">
+            <h1 class="hero-title">
+              National Immunization Awareness Program
+            </h1>
+            <p class="hero-text">
+              Protecting communities through timely vaccinations, education, and accessible
+              clinics across all regions.
+            </p>
+            <button class="hero-cta" type="button">
+              Learn About This Program
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: main image -->
+        <div class="hero-right">
+          <div class="hero-main-image">
+            <img
+              src="img/1.jpg"
+              alt="Health workers providing immunization services"
+              class="hero-main-img"
+            />
+          </div>
+        </div>
+
+       
+        <div class="hero-thumbs-row" aria-label="Additional images for this program">
+          <div class="hero-thumbs">
+            <button class="hero-thumb is-active" type="button" data-main-src="img/1.jpg">
+              <img src="img/1.jpg" alt="Immunization clinic overview" />
+            </button>
+            <button class="hero-thumb" type="button" data-main-src="img/2.jpg">
+              <img src="img/2.jpg" alt="Nurse administering vaccine" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Slide 2 -->
+    <article class="hero-slide" data-slide-index="1">
+      <div class="hero-card">
+        <div class="hero-left">
+          <div class="hero-program-content">
+            <h1 class="hero-title">
+              Maternal and Child Health Services
+            </h1>
+            <p class="hero-text">
+              Comprehensive antenatal, delivery, and postnatal care to ensure safe motherhood
+              and healthy children in every community.
+            </p>
+            <button class="hero-cta" type="button">
+              Explore Services
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-main-image">
+            <img
+              src="img/4.jpg"
+              alt="Mother and child during health check"
+              class="hero-main-img"
+            />
+          </div>
+        </div>
+
+        <div class="hero-thumbs-row" aria-label="Additional images for this program">
+          <div class="hero-thumbs">
+            <button class="hero-thumb is-active" type="button" data-main-src="img/4.jpg">
+              <img src="img/4.jpg" alt="Clinic consultation" />
+            </button>
+            <button class="hero-thumb" type="button" data-main-src="img/2.jpg">
+              <img src="img/2.jpg" alt="Midwife supporting mother" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Navigation arrows -->
+    <button class="hero-nav hero-nav-prev" type="button" aria-label="Previous program">
+      ‹
+    </button>
+    <button class="hero-nav hero-nav-next" type="button" aria-label="Next program">
+      ›
+    </button>
+
+    <!-- Dots -->
+    <div class="hero-dots" role="tablist" aria-label="Select program slide">
+      <button
+        class="hero-dot is-active"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        aria-label="Go to slide 1"
+        data-target-slide="0"
+      ></button>
+      <button
+        class="hero-dot"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-label="Go to slide 2"
+        data-target-slide="1"
+      ></button>
+    </div>
+  </section>
+
+  <section class="programs" aria-label="Programs and initiatives">
+    <div class="programs-inner">
+      <div class="programs-header reveal-on-scroll">
+        <div class="section-header">
+          <h2 class="programs-title">Programs &amp; Initiatives</h2>
+          <div class="section-progress" aria-hidden="true">
+            <span class="section-progress-dot"></span>
+            <span class="section-progress-line"></span>
+            <span class="section-progress-dot"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-cards reveal-on-scroll" aria-label="Programs and initiatives list">
+        <article class="program-card">
+          <div class="program-card-media" aria-hidden="true">
+            <img class="program-card-img" src="img/Purple Month-02.png" alt="" />
+          </div>
+        </article>
+        <article class="program-card">
+          <div class="program-card-media" aria-hidden="true">
+            <img class="program-card-img" src="img/Show ur love.png" alt="" />
+          </div>
+        </article>
+        <article class="program-card">
+          <h3 class="program-card-title program-card-title--dzramdo">
+            Dzramdo<br />Project
+          </h3>
+        </article>
+      </div>
+
+      <div class="stats-band" aria-label="Mental health statistics">
+        <div class="stats-row reveal-on-scroll">
+          <div class="stat-item">
+            <div class="stat-icon" aria-hidden="true">
+              <img
+                class="stat-asset-img"
+                src="img/Asset 2Nurse.png"
+                alt=""
+              />
+            </div>
+            <div class="stat-text">
+              <div class="stat-label">Psychiatrists</div>
+              <div class="stat-number">500+</div>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon" aria-hidden="true">
+              <img
+                class="stat-asset-img"
+                src="img/Asset 2Psychiatric.png"
+                alt=""
+              />
+            </div>
+            <div class="stat-text">
+              <div class="stat-label">Psychiatric Hospitals</div>
+              <div class="stat-number">3</div>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon" aria-hidden="true">
+              <img
+                class="stat-asset-img"
+                src="img/Asset 2 Pateint.png"
+                alt=""
+              />
+            </div>
+            <div class="stat-text">
+              <div class="stat-label">Total Treatment</div>
+              <div class="stat-year">2025</div>
+              <div class="stat-number">178,304</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-header reveal-on-scroll" aria-label="News section header">
+        <h2 class="news-title">NEWS</h2>
+        <div class="news-progress" aria-hidden="true">
+          <span class="news-progress-dot"></span>
+          <span class="news-progress-line"></span>
+          <span class="news-progress-dot"></span>
+        </div>
+      </div>
+
+      <div class="news-posts reveal-on-scroll" aria-label="Latest news posts">
+        <a class="news-card" href="#" role="button" aria-label="Open news: Show your Love 2026 Campaign" onclick="event.preventDefault()">
+          <img
+            class="news-card-img"
+            src="img/5.jpg"
+            alt="News event coverage"
+          />
+          <div class="news-card-body">
+            <div class="news-card-tag">Latest News</div>
+            <h3 class="news-card-title">Show your Love 2026 Campaign</h3>
+            <p class="news-card-excerpt">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+              ullamco laboris.
+            </p>
+          </div>
+        </a>
+
+        <a class="news-card" href="#" role="button" aria-label="Open news: Annual Performance Review 2025" onclick="event.preventDefault()">
+          <img
+            class="news-card-img"
+            src="img/2.jpg"
+            alt="Annual review meeting"
+          />
+          <div class="news-card-body">
+            <div class="news-card-tag">Latest News</div>
+            <h3 class="news-card-title">Annual Performance Review 2025</h3>
+            <p class="news-card-excerpt">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+              ullamco laboris.
+            </p>
+          </div>
+        </a>
+
+        <a class="news-card" href="#" role="button" aria-label="Open news: Mental Health Screening at Makola" onclick="event.preventDefault()">
+          <img
+            class="news-card-img"
+            src="img/4.jpg"
+            alt="Mental health screening event"
+          />
+          <div class="news-card-body">
+            <div class="news-card-tag">Latest News</div>
+            <h3 class="news-card-title">Mental Health Screening at Makola</h3>
+            <p class="news-card-excerpt">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+              ullamco laboris.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="stakeholders" aria-label="Stakeholders section">
+        <div class="stakeholders-header reveal-on-scroll">
+          <div class="section-header">
+            <h2 class="programs-title stakeholders-title">STAKEHOLDERS</h2>
+            <div class="section-progress" aria-hidden="true">
+              <span class="section-progress-dot"></span>
+              <span class="section-progress-line"></span>
+              <span class="section-progress-dot"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stakeholders-carousel" aria-label="Stakeholder logos carousel">
+          <div class="stakeholders-track" aria-hidden="true">
+            <!-- Set 1 -->
+            <div class="stakeholder-item">
+              <img class="stakeholder-logo" src="img/BN-Logo.png" alt="" />
+            </div>
+            <div class="stakeholder-item">
+              <img class="stakeholder-logo" src="img/CHAG LOGO.png" alt="" />
+            </div>
+            <div class="stakeholder-item">
+              <img class="stakeholder-logo" src="img/FCDO-01.png" alt="" />
+            </div>
+            <div class="stakeholder-item">
+              <img class="stakeholder-logo" src="img/GPA LOGO.png" alt="" />
+            </div>
+            <div class="stakeholder-item">
+              <img class="stakeholder-logo" src="img/IOM-Visibiliy.png" alt="" />
+            </div>
+
+            <!-- Set 2 (duplicate for seamless loop) -->
+            <div class="stakeholder-item">
+              <img class="stakeholder-logo" src="img/BN-Logo.png" alt="" />
+            </div>
+            <div class="stakeholder-item">
+              <img class="stakeholder-logo" src="img/CHAG LOGO.png" alt="" />
+            </div>
+            <div class="stakeholder-item">
+              <img class="stakeholder-logo" src="img/FCDO-01.png" alt="" />
+            </div>
+            <div class="stakeholder-item">
+              <img class="stakeholder-logo" src="img/GPA LOGO.png" alt="" />
+            </div>
+            <div class="stakeholder-item">
+              <img class="stakeholder-logo" src="img/IOM-Visibiliy.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="site-footer" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="img/mha logo.png" alt="Mental Health Authority logo" />
+        </div>
+
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="X (Twitter)">
+            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <i class="fab fa-tiktok" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Hospitals</h4>
+          <ul>
+            <li><a href="#">Accra Psychiatric Hospital</a></li>
+            <li><a href="#">Pantang Hospital</a></li>
+            <li><a href="#">Ankafu Hospital</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">News</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact">
+            <p>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span>info@mha.gov.gh</span>
+            </p>
+            <p>
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <span class="footer-phone-line"><strong>Authority Line:</strong> 0303 964 878</span>
+            </p>
+            <p class="footer-donate-row">
+              <button
+                class="footer-donate-btn"
+                type="button"
+                id="openDonationPopup"
+                aria-haspopup="dialog"
+                aria-controls="donationPopup"
+              >
+                Click to Donate
+              </button>
+            </p>
+            <p>
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <a
+                class="footer-location-link"
+                href="https://www.google.com/maps/search/?api=1&query=Old+Race+Course+Rd%2C+Accra"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Old Race Course Rd, Accra
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-divider" aria-hidden="true"></div>
+    <div class="footer-bottom">© 2026 MHA All rights reserved.</div>
+  </footer>
+
+  <div class="donation-modal" id="donationPopup" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Donation information">
+    <div class="donation-modal-backdrop" data-close-donation="true"></div>
+    <div class="donation-modal-content">
+      <button class="donation-modal-close" type="button" id="closeDonationPopup" aria-label="Close donation popup">×</button>
+      <img class="donation-modal-image" src="img/Donations 2.jpg.jpeg" alt="Donation details" />
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const slider = document.querySelector('.hero-slider');
+      if (!slider) return;
+
+      const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+      const prevBtn = slider.querySelector('.hero-nav-prev');
+      const nextBtn = slider.querySelector('.hero-nav-next');
+      const dots = Array.from(slider.querySelectorAll('.hero-dot'));
+
+      let currentIndex = 0;
+      const rotationInterval = 15000; // 6 seconds
+      let timerId = null;
+
+      function showSlide(index) {
+        if (!slides.length) return;
+
+        currentIndex = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('is-active', i === currentIndex);
+        });
+
+        dots.forEach((dot, i) => {
+          const isActive = i === currentIndex;
+          dot.classList.toggle('is-active', isActive);
+          dot.setAttribute('aria-selected', String(isActive));
+        });
+
+        resetTimer();
+      }
+
+      function nextSlide() {
+        showSlide(currentIndex + 1);
+      }
+
+      function prevSlide() {
+        showSlide(currentIndex - 1);
+      }
+
+      function resetTimer() {
+        if (timerId) {
+          clearInterval(timerId);
+        }
+        timerId = setInterval(nextSlide, rotationInterval);
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+      }
+
+      dots.forEach((dot) => {
+        dot.addEventListener('click', function () {
+          const target = parseInt(this.getAttribute('data-target-slide'), 10);
+          if (!isNaN(target)) {
+            showSlide(target);
+          }
+        });
+      });
+
+      slides.forEach((slide) => {
+        const mainImg = slide.querySelector('.hero-main-img');
+        const thumbs = Array.from(slide.querySelectorAll('.hero-thumb'));
+        const thumbsRow = slide.querySelector('.hero-thumbs');
+
+        if (thumbsRow) {
+          thumbsRow.classList.toggle('is-two', thumbs.length === 2);
+        }
+
+        thumbs.forEach((thumb) => {
+          thumb.addEventListener('click', function () {
+            const newSrc = this.getAttribute('data-main-src');
+            if (newSrc && mainImg) {
+              mainImg.src = newSrc;
+
+              thumbs.forEach((t) => t.classList.remove('is-active'));
+              this.classList.add('is-active');
+            }
+          });
+        });
+      });
+
+      resetTimer();
+    })();
+
+
+    (function () {
+      const contactLinks = document.querySelectorAll('a[href="#footer"]');
+      const footerEl = document.getElementById('footer');
+      if (!contactLinks.length || !footerEl) return;
+
+      contactLinks.forEach((contactLink) => {
+        contactLink.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          const startY = window.pageYOffset || document.documentElement.scrollTop;
+          const targetY =
+            (footerEl.getBoundingClientRect().top + startY) - 8; 
+
+          const distance = Math.abs(targetY - startY);
+          const durationMs = Math.max(1800, Math.min(2800, distance * 0.95)); 
+
+          function easeInOutCubic(t) {
+            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+          }
+
+          const startTime = performance.now();
+
+          
+          window.__mhaSuppressStatsCount = true;
+          setTimeout(() => {
+            window.__mhaSuppressStatsCount = false;
+          }, durationMs + 250);
+
+          function step(now) {
+            const t = Math.min(1, (now - startTime) / durationMs);
+            const eased = easeInOutCubic(t);
+            window.scrollTo(0, Math.round(startY + (targetY - startY) * eased));
+            if (t < 1) requestAnimationFrame(step);
+          }
+
+          requestAnimationFrame(step);
+          if (history && history.replaceState) {
+            history.replaceState(null, '', '#footer');
+          }
+        });
+      });
+    })();
+
+    
+    (function () {
+      const statsBand = document.querySelector('.stats-band');
+      const statNumberEls = document.querySelectorAll('.stat-number');
+      if (!statsBand || !statNumberEls.length) return;
+
+      const durationMs = 2000; 
+
+      function formatIntWithCommas(n) {
+        return new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(n);
+      }
+
+      function parseTarget(text) {
+        const trimmed = String(text || '').trim();
+        const hasPlus = trimmed.includes('+');
+        const digitsOnly = trimmed.replace(/[^0-9,]/g, '').replace(/,/g, '');
+        const target = parseInt(digitsOnly, 10);
+        return { target, hasPlus };
+      }
+
+      
+      const statTargets = Array.from(statNumberEls)
+        .map((el) => {
+          const raw = el.textContent.trim();
+
+        
+          if (!/^\d+$/.test(raw) && !/^\d+\+$/.test(raw)) return null;
+
+          const { target, hasPlus } = parseTarget(raw);
+          if (!Number.isFinite(target)) return null;
+
+          return { el, target, hasPlus };
+        })
+        .filter(Boolean);
+
+      if (!statTargets.length) return;
+
+      function startCounting() {
+        if (window.__mhaSuppressStatsCount) return;
+        const now = performance.now();
+        statTargets.forEach(({ el, target, hasPlus }) => {
+          el.textContent = hasPlus ? '0+' : '0';
+
+          const start = 0;
+          const startTime = now;
+
+          function tick(tNow) {
+            const t = Math.min(1, (tNow - startTime) / durationMs);
+            const current = Math.floor(start + (target - start) * t);
+            el.textContent = hasPlus ? `${formatIntWithCommas(current)}+` : formatIntWithCommas(current);
+
+            if (t < 1) requestAnimationFrame(tick);
+          }
+
+          requestAnimationFrame(tick);
+        });
+      }
+
+      
+      let wasIntersecting = false;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          if (!entry) return;
+
+          const isIntersecting = entry.isIntersecting;
+          if (isIntersecting && !wasIntersecting) startCounting();
+          wasIntersecting = isIntersecting;
+        },
+        { threshold: 0.35 }
+      );
+
+      observer.observe(statsBand);
+    })();
+
+   
+    (function () {
+      const aboutLi = document.querySelector('.topbar nav ul li.dropdown');
+      if (!aboutLi) return;
+
+      aboutLi.addEventListener('mouseenter', () => {
+        aboutLi.classList.add('is-open');
+      });
+
+      aboutLi.addEventListener('mouseleave', () => {
+        aboutLi.classList.remove('is-open');
+      });
+    })();
+
+   
+    (function () {
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+      const sidebar = document.getElementById('mobileSidebar');
+      const overlay = document.getElementById('mobileOverlay');
+      const closeBtn = document.querySelector('.mobile-close-btn');
+
+      if (!menuBtn || !sidebar || !overlay) return;
+
+      function openMenu() {
+        sidebar.classList.add('is-open');
+        overlay.classList.add('is-open');
+        sidebar.setAttribute('aria-hidden', 'false');
+        menuBtn.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeMenu() {
+        sidebar.classList.remove('is-open');
+        overlay.classList.remove('is-open');
+        sidebar.setAttribute('aria-hidden', 'true');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+
+      menuBtn.addEventListener('click', openMenu);
+      closeBtn?.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+    
+      const aboutToggle = document.querySelector('.mobile-about-toggle');
+      const aboutDropdown = document.querySelector('.mobile-dropdown');
+      if (aboutToggle && aboutDropdown) {
+        aboutToggle.addEventListener('click', () => {
+          const isOpen = aboutDropdown.classList.toggle('is-open');
+          aboutToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+      }
+
+      
+      sidebar.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', closeMenu);
+      });
+    })();
+
+  
+    (function () {
+      const revealEls = document.querySelectorAll('.reveal-on-scroll');
+      if (!revealEls || !revealEls.length) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            el.classList.add('is-visible');
+            observer.unobserve(el); 
+          });
+        },
+        { threshold: 0.18 }
+      );
+
+      revealEls.forEach((el) => observer.observe(el));
+    })();
+
+    (function () {
+      const openBtn = document.getElementById('openDonationPopup');
+      const closeBtn = document.getElementById('closeDonationPopup');
+      const modal = document.getElementById('donationPopup');
+      if (!openBtn || !closeBtn || !modal) return;
+
+      function openModal() {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      openBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target && target instanceof HTMLElement && target.dataset.closeDonation === 'true') {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
+
