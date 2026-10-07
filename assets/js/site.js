@@ -396,6 +396,18 @@
     render();
   }
 
+  // ---------- Dated event cards (World Mental Health Day) ----------
+  document.querySelectorAll('[data-event-date]').forEach((card) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const event = new Date(card.dataset.eventDate + 'T00:00:00');
+    const end = new Date(card.dataset.end + 'T00:00:00');
+    if (today >= end) { card.hidden = true; return; }
+    const days = Math.round((event - today) / 86400000);
+    const label = card.querySelector('[data-countdown]');
+    if (label) label.textContent = days > 1 ? `In ${days} days` : days === 1 ? 'Tomorrow' : 'Today';
+  });
+
   // ---------- Footer year ----------
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
