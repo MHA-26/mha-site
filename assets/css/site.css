@@ -225,33 +225,42 @@ p { margin: 0 0 1em; }
 .float-quote img { width: 48px; height: 48px; object-fit: contain; }
 @keyframes bob { 50% { transform: translateY(-10px); } }
 
-/* ---------- World Mental Health Day hero card ---------- */
+/* ---------- World Mental Health Day announcement bar ---------- */
+.wmhd-wrap { display: flex; justify-content: center; margin-top: calc(-1 * clamp(8px, 4vw, 60px)); margin-bottom: clamp(28px, 4vw, 48px); }
 .wmhd {
-  display: flex; align-items: center; gap: 16px; max-width: 560px; margin-bottom: 24px;
-  padding: 14px 18px 14px 14px; border-radius: 20px;
-  background: linear-gradient(120deg, #fff 0%, #fbf3ff 60%, #fff6df 100%);
-  border: 1px solid #ead7f6; box-shadow: var(--shadow);
+  display: flex; align-items: center; gap: 18px; width: min(100%, 900px);
+  padding: 10px 10px 10px 12px; border-radius: 999px;
+  background: linear-gradient(100deg, var(--purple-800), var(--purple-600) 55%, #7e2db0);
+  color: #fff; box-shadow: 0 18px 40px -18px rgba(74, 20, 112, .75), 0 0 0 1px rgba(255,255,255,.06) inset;
 }
 .wmhd[hidden] { display: none; }
-.wmhd-date {
-  flex: none; width: 64px; height: 68px; border-radius: 14px; display: grid; place-content: center; text-align: center;
-  background: linear-gradient(160deg, var(--purple-600), var(--purple-800)); color: #fff; line-height: 1;
+.wmhd-chip {
+  flex: none; display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border-radius: 999px; background: #fff; color: var(--purple-800);
+  font-weight: 800; font-size: .86rem; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap;
 }
-.wmhd-date span { font-size: .7rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #e0c8f2; }
-.wmhd-date strong { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; margin-top: 2px; }
-.wmhd-body { min-width: 0; }
-.wmhd-kicker { margin: 0 0 2px; font-size: .74rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--green-700); display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-.wmhd-count:empty { display: none; }
-.wmhd-count { padding: 2px 8px; border-radius: 999px; background: var(--gold); color: #3d2600; letter-spacing: .04em; }
-.wmhd-theme { margin: 0 0 6px; font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; font-style: italic; color: var(--purple-800); line-height: 1.3; }
-.wmhd-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; font-size: .9rem; color: var(--purple-600); text-decoration: none; }
-.wmhd-link:hover { text-decoration: underline; }
-.wmhd-link .fa-arrow-up-right-from-square { font-size: .72em; }
+.wmhd-chip i { color: var(--green-600); }
+.wmhd-text { flex: 1; min-width: 0; margin: 0; font-size: 1.02rem; line-height: 1.35; color: #eadcf5; }
+.wmhd-text strong { color: #fff; font-weight: 800; margin-right: 6px; }
+.wmhd-text em { font-family: var(--font-display); font-style: italic; color: #fff; }
+.wmhd-btn {
+  flex: none; display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.55);
+  background: rgba(255,255,255,.12); color: #fff; font-weight: 800; font-size: .9rem; text-decoration: none; white-space: nowrap;
+  transition: background .25s, border-color .25s;
+}
+.wmhd-btn:hover { background: rgba(255,255,255,.22); border-color: #fff; }
+.wmhd-btn .fa-chevron-right { font-size: .72rem; transition: transform .25s var(--ease); }
+.wmhd-btn:hover .fa-chevron-right { transform: translateX(3px); }
+@media (max-width: 760px) {
+  .wmhd { flex-wrap: wrap; gap: 10px 12px; border-radius: 24px; padding: 14px; }
+  .wmhd-text { flex-basis: calc(100% - 140px); font-size: .95rem; }
+  .wmhd-btn { width: 100%; justify-content: center; }
+}
 @media (max-width: 640px) {
-  .wmhd { align-items: flex-start; gap: 12px; padding: 12px; margin-bottom: 18px; }
-  .wmhd-date { width: 54px; height: 58px; }
-  .wmhd-date strong { font-size: 1.6rem; }
-  .wmhd-theme { font-size: 1rem; }
+  .wmhd-wrap { margin-bottom: 22px; }
+  .wmhd-text { flex-basis: 100%; }
+  .wmhd-chip { padding: 6px 12px; font-size: .78rem; }
 }
 
 /* ---------- Crisis strip ---------- */

@@ -405,7 +405,7 @@
     if (today >= end) { card.hidden = true; return; }
     const days = Math.round((event - today) / 86400000);
     const label = card.querySelector('[data-countdown]');
-    if (label) label.textContent = days > 1 ? `In ${days} days` : days === 1 ? 'Tomorrow' : 'Today';
+    if (label && days >= 0) label.textContent = days > 1 ? `In ${days} days` : days === 1 ? 'Tomorrow' : 'Today';
   });
 
   // ---------- Footer year ----------
