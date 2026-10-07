@@ -23,7 +23,35 @@
   />
 
  
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2026-10-07" />
+  <!-- World Mental Health Day banner styles (kept inline so cached stylesheets can't break it) -->
+  <style>
+    .wmhd-wrap { display: flex; justify-content: center; padding: 18px 16px; background: #faf6fc; }
+    .wmhd-wrap[hidden] { display: none; }
+    .wmhd { box-sizing: border-box; display: flex; align-items: center; gap: 18px; width: 100%; max-width: 920px; margin: 0; padding: 10px 10px 10px 12px; border-radius: 999px; background: linear-gradient(100deg, #3d1259, #6a1b9a 55%, #7e2db0); color: #fff; box-shadow: 0 18px 40px -18px rgba(74, 20, 112, .75); font-family: "Open Sans", Arial, sans-serif; }
+    .wmhd *, .wmhd *::before, .wmhd *::after { box-sizing: border-box; }
+    .wmhd-chip { flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; background: #fff; color: #3d1259; font-weight: 800; font-size: 13px; line-height: 1.2; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
+    .wmhd-chip i { color: #2e8b3e; }
+    .wmhd-body { flex: 1; min-width: 0; }
+    .wmhd-text { margin: 0; font-size: 16px; line-height: 1.4; color: #eadcf5; }
+    .wmhd-text strong { color: #fff; font-weight: 700; }
+    .wmhd-text em { font-family: Georgia, "Times New Roman", serif; font-style: italic; color: #fff; }
+    .wmhd-sub { margin: 2px 0 0; font-size: 13px; line-height: 1.4; color: #d9c1ec; }
+    .wmhd-sub i { color: #b9f5c0; margin-right: 4px; }
+    .wmhd-btn { flex: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 20px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.6); background: rgba(255,255,255,.12); color: #fff !important; font-weight: 700; font-size: 14px; line-height: 1.2; text-decoration: none !important; white-space: nowrap; transition: background .25s, border-color .25s; }
+    .wmhd-btn:hover { background: rgba(255,255,255,.22); border-color: #fff; }
+    .wmhd-btn:focus-visible { outline: 3px solid #f4b63f; outline-offset: 3px; }
+    .wmhd-btn .fa-chevron-right { font-size: 11px; }
+    @media (max-width: 760px) {
+      .wmhd-wrap { padding: 14px 12px; }
+      .wmhd { flex-wrap: wrap; gap: 10px; border-radius: 20px; padding: 16px; }
+      .wmhd-chip { padding: 6px 12px; font-size: 12px; }
+      .wmhd-body { flex-basis: 100%; }
+      .wmhd-text { font-size: 15px; }
+      .wmhd-text strong { display: block; margin-bottom: 2px; }
+      .wmhd-btn { width: 100%; padding: 12px 16px; font-size: 15px; }
+    }
+  </style>
 </head>
 <body>
   <header class="topbar">
@@ -112,13 +140,16 @@
     </div>
   </aside>
 
-  <!-- World Mental Health Day announcement: hides itself automatically after data-end -->
-  <div class="wmhd-wrap">
-    <aside class="wmhd" data-event-date="2026-10-10" data-end="2026-10-11" aria-label="World Mental Health Day 2026">
-      <span class="wmhd-chip"><i class="fa-solid fa-calendar-day" aria-hidden="true"></i> <span data-countdown>10 Oct</span></span>
-      <p class="wmhd-text"><strong>World Mental Health Day, 10 October:</strong> <em>&ldquo;Lived Experiences Heard: Real Voices, Real Change&rdquo;</em></p>
-      <a class="wmhd-btn" href="https://us02web.zoom.us/j/84829568165?pwd=aHbbrob4Tuswf3PGmMHKxS5IiWlELd.1" target="_blank" rel="noopener noreferrer" aria-label="Join our World Mental Health Day public lecture on Zoom (opens in a new tab)">
-        Join the lecture <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+  <!-- World Mental Health Day announcement: hides itself automatically from 11 October 2026 -->
+  <div class="wmhd-wrap" data-hide-from="2026-10-11">
+    <aside class="wmhd" aria-label="World Mental Health Day 2026 public lecture">
+      <span class="wmhd-chip"><i class="fa-solid fa-calendar-day" aria-hidden="true"></i> 10 Oct</span>
+      <div class="wmhd-body">
+        <p class="wmhd-text"><strong>World Mental Health Day:</strong> <em>&ldquo;Lived Experiences Heard: Real Voices, Real Change&rdquo;</em></p>
+        <p class="wmhd-sub"><i class="fa-solid fa-users" aria-hidden="true"></i> Public lecture on Zoom &middot; Open to everyone</p>
+      </div>
+      <a class="wmhd-btn" href="https://us02web.zoom.us/j/84829568165?pwd=aHbbrob4Tuswf3PGmMHKxS5IiWlELd.1" target="_blank" rel="noopener noreferrer" aria-label="Join the World Mental Health Day public lecture on Zoom (opens in a new tab)">
+        Join the public lecture <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
       </a>
     </aside>
   </div>
@@ -855,17 +886,11 @@
     })();
   </script>
   <script>
-    // World Mental Health Day banner: countdown label, hidden after the event
+    // Hide the World Mental Health Day banner once the event has passed
     (function () {
-      document.querySelectorAll('[data-event-date]').forEach(function (card) {
-        var today = new Date();
-        today.setHours(0, 0, 0, 0);
-        var event = new Date(card.getAttribute('data-event-date') + 'T00:00:00');
-        var end = new Date(card.getAttribute('data-end') + 'T00:00:00');
-        if (today >= end) { card.parentNode.hidden = true; return; }
-        var days = Math.round((event - today) / 86400000);
-        var label = card.querySelector('[data-countdown]');
-        if (label && days >= 0) label.textContent = days > 1 ? 'In ' + days + ' days' : days === 1 ? 'Tomorrow' : 'Today';
+      var today = new Date();
+      document.querySelectorAll('[data-hide-from]').forEach(function (el) {
+        if (today >= new Date(el.getAttribute('data-hide-from') + 'T00:00:00')) el.hidden = true;
       });
     })();
   </script>
