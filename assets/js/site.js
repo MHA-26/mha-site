@@ -335,6 +335,67 @@
     }
   }
 
+  // ---------- Research: review-level checker ----------
+  const checker = document.getElementById('irbChecker');
+  if (checker) {
+    const out = document.getElementById('checkerResult');
+    const sets = Array.from(checker.querySelectorAll('fieldset'));
+    const RESULTS = {
+      none: ['out-none', 'fa-circle-info', 'MHA-IRB review is probably not needed',
+        'Your study does not seem to involve MHA institutions, service users, staff or their data. Apply to the ethics committee responsible for your study site. If you are unsure, contact the Secretariat.'],
+      full: ['out-full', 'fa-users', 'Likely: full-board review',
+        'Your study involves vulnerable participants, an intervention or sensitive topics, so it will usually be reviewed at a monthly board meeting.'],
+      expedited: ['out-exp', 'fa-bolt', 'Likely: expedited review',
+        'Your study appears to be minimal risk. Experienced members may review it without a full meeting, with a target of 3 weeks.'],
+      exempt: ['out-exempt', 'fa-file-circle-check', 'Possibly exempt',
+        'Your study may qualify for exemption, but you must still apply. The board makes the final decision, usually within 10 working days.']
+    };
+    function value(name) {
+      const el = checker.querySelector(`input[name="${name}"]:checked`);
+      return el ? el.value : null;
+    }
+    function update() {
+      const q1 = value('q1');
+      sets.slice(1).forEach((f) => f.classList.toggle('is-skipped', q1 === 'no'));
+      let key = null;
+      if (q1 === 'no') key = 'none';
+      else if (q1 === 'yes') {
+        const q2 = value('q2'); const q3 = value('q3'); const q4 = value('q4');
+        if (q2 === 'yes' || q3 === 'yes') key = 'full';
+        else if (q2 === 'no' && q3 === 'no' && q4) key = q4 === 'yes' ? 'exempt' : 'expedited';
+      }
+      if (!key) {
+        out.innerHTML = '<p class="checker-hint">Answer the questions to see a result.</p>';
+        return;
+      }
+      const [cls, icon, title, text] = RESULTS[key];
+      out.innerHTML = `<div class="checker-out ${cls}"><h3><i class="fa-solid ${icon}" aria-hidden="true"></i> ${title}</h3><p>${text}</p></div>`;
+    }
+    checker.addEventListener('change', update);
+    checker.addEventListener('submit', (e) => e.preventDefault());
+  }
+
+  // ---------- Research: submission checklist (saved on this device only) ----------
+  const checklist = document.getElementById('submitChecklist');
+  if (checklist) {
+    const boxes = Array.from(checklist.querySelectorAll('input[type="checkbox"]'));
+    const bar = document.getElementById('checklistBar');
+    const text = document.getElementById('checklistText');
+    const KEY = 'mha-irb-checklist';
+    try {
+      const saved = JSON.parse(localStorage.getItem(KEY) || '[]');
+      boxes.forEach((b, i) => { b.checked = !!saved[i]; });
+    } catch (e) { /* storage unavailable */ }
+    function render() {
+      const done = boxes.filter((b) => b.checked).length;
+      bar.style.width = (done / boxes.length) * 100 + '%';
+      text.textContent = `${done} of ${boxes.length} ready`;
+      try { localStorage.setItem(KEY, JSON.stringify(boxes.map((b) => b.checked))); } catch (e) { /* ignore */ }
+    }
+    checklist.addEventListener('change', render);
+    render();
+  }
+
   // ---------- Footer year ----------
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
