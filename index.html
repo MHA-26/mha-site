@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JYXGBT5XEB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JYXGBT5XEB');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mental Health Authority</title>
@@ -891,6 +899,29 @@
       var today = new Date();
       document.querySelectorAll('[data-hide-from]').forEach(function (el) {
         if (today >= new Date(el.getAttribute('data-hide-from') + 'T00:00:00')) el.hidden = true;
+      });
+    })();
+  </script>
+  <script>
+    // Google Analytics: record key actions (calls, lecture link, downloads, email, social)
+    (function () {
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('a[href]') : null;
+        if (!a || typeof gtag !== 'function') return;
+        var href = a.getAttribute('href') || '';
+        var name = null;
+        if (href.indexOf('tel:') === 0) name = 'call_click';
+        else if (href.indexOf('mailto:') === 0) name = 'email_click';
+        else if (/wa\.me|whatsapp/i.test(href)) name = 'whatsapp_click';
+        else if (/zoom\.us/i.test(href)) name = 'join_lecture_click';
+        else if (/\.pdf($|\?)/i.test(href)) name = 'file_download_click';
+        else if (/linkedin|facebook|instagram|youtube|x\.com|twitter|tiktok/i.test(href)) name = 'social_click';
+        if (!name) return;
+        gtag('event', name, {
+          link_url: href.indexOf('tel:') === 0 ? href.replace('tel:', '') : href.split('?')[0],
+          link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 100),
+          page_section: (a.closest('[id]') || {}).id || ''
+        });
       });
     })();
   </script>
