@@ -396,16 +396,30 @@
     render();
   }
 
-  // ---------- Dated event cards (World Mental Health Day) ----------
-  document.querySelectorAll('[data-event-date]').forEach((card) => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const event = new Date(card.dataset.eventDate + 'T00:00:00');
-    const end = new Date(card.dataset.end + 'T00:00:00');
-    if (today >= end) { card.hidden = true; return; }
-    const days = Math.round((event - today) / 86400000);
-    const label = card.querySelector('[data-countdown]');
-    if (label && days >= 0) label.textContent = days > 1 ? `In ${days} days` : days === 1 ? 'Tomorrow' : 'Today';
+  // ---------- Dated event cards: hide once the event has passed ----------
+  document.querySelectorAll('[data-end]').forEach((card) => {
+    if (new Date() >= new Date(card.dataset.end + 'T00:00:00')) card.closest('.wmhd-wrap').hidden = true;
+  });
+
+  // ---------- Google Analytics: key actions (no mood or checker answers are sent) ----------
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (!a || typeof window.gtag !== 'function') return;
+    const href = a.getAttribute('href') || '';
+    let name = null;
+    if (href.startsWith('tel:')) name = 'call_click';
+    else if (href.startsWith('mailto:')) name = 'email_click';
+    else if (/wa\.me|whatsapp/i.test(href)) name = 'whatsapp_click';
+    else if (/zoom\.us/i.test(href)) name = 'join_lecture_click';
+    else if (/\.pdf($|\?)/i.test(href)) name = 'file_download_click';
+    else if (/linkedin|facebook|instagram|youtube|x\.com|twitter|tiktok/i.test(href)) name = 'social_click';
+    if (!name) return;
+    window.gtag('event', name, {
+      link_url: href.startsWith('tel:') ? href.slice(4) : href.split('?')[0],
+      link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 100),
+      // Never attribute clicks to the private mood check-in
+      page_section: a.closest('#checkin') ? '' : ((a.closest('[id]') || {}).id || '')
+    });
   });
 
   // ---------- Footer year ----------

@@ -240,7 +240,10 @@ p { margin: 0 0 1em; }
   font-weight: 800; font-size: .86rem; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap;
 }
 .wmhd-chip i { color: var(--green-600); }
-.wmhd-text { flex: 1; min-width: 0; margin: 0; font-size: 1.02rem; line-height: 1.35; color: #eadcf5; }
+.wmhd-body { flex: 1; min-width: 0; }
+.wmhd-text { margin: 0; font-size: 1.02rem; line-height: 1.35; color: #eadcf5; }
+.wmhd-sub { margin: 2px 0 0; font-size: .82rem; color: #d9c1ec; }
+.wmhd-sub i { color: #b9f5c0; margin-right: 4px; }
 .wmhd-text strong { color: #fff; font-weight: 800; margin-right: 6px; }
 .wmhd-text em { font-family: var(--font-display); font-style: italic; color: #fff; }
 .wmhd-btn {
@@ -254,12 +257,13 @@ p { margin: 0 0 1em; }
 .wmhd-btn:hover .fa-chevron-right { transform: translateX(3px); }
 @media (max-width: 760px) {
   .wmhd { flex-wrap: wrap; gap: 10px 12px; border-radius: 24px; padding: 14px; }
-  .wmhd-text { flex-basis: calc(100% - 140px); font-size: .95rem; }
+  .wmhd-body { flex-basis: 100%; }
+  .wmhd-text { font-size: .95rem; }
+  .wmhd-text strong { display: block; margin-bottom: 2px; }
   .wmhd-btn { width: 100%; justify-content: center; }
 }
 @media (max-width: 640px) {
   .wmhd-wrap { margin-bottom: 22px; }
-  .wmhd-text { flex-basis: 100%; }
   .wmhd-chip { padding: 6px 12px; font-size: .78rem; }
 }
 
