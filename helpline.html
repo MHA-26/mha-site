@@ -129,7 +129,7 @@
           <article class="channel channel-wa reveal">
             <span class="channel-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
             <h3>WhatsApp</h3>
-            <p>Prefer to type? Send us a message on WhatsApp.</p>
+            <p>Prefer to type? Message us on WhatsApp, any time of day or night.</p>
             <a class="channel-big" href="https://wa.me/233549045216" target="_blank" rel="noopener noreferrer">054 904 5216</a>
             <a class="btn btn-light" href="https://wa.me/233549045216" target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
           </article>
@@ -200,29 +200,133 @@
             <p class="kicker kicker-light">Impact report</p>
             <h2 id="impactTitle">Reaching people across Ghana</h2>
           </div>
-          <p id="impactNote">Figures from the helpline call centre will appear here.</p>
+          <p>Since 2024, people in every region of Ghana have reached out to the platform. 86% were calling for the first time.</p>
         </div>
         <div class="kpi-grid" id="kpiGrid"></div>
-        <figure class="trend reveal">
-          <figcaption>
-            <strong>Contacts by year</strong>
-            <span id="trendSub">Awaiting data</span>
-          </figcaption>
-          <div class="trend-chart" id="trendChart" role="img" aria-label="Bar chart of helpline contacts by year"></div>
-        </figure>
+        <div class="impact-charts">
+          <figure class="trend panel reveal">
+            <figcaption><strong>Contacts by year</strong><span>*2026 so far</span></figcaption>
+            <div class="trend-chart" id="trendChart" role="img" aria-label="Bar chart of helpline contacts by year"></div>
+          </figure>
+          <figure class="panel reveal">
+            <figcaption><strong>Why people reach out</strong><span>Share of contacts</span></figcaption>
+            <div class="hbars" id="reasonBars"></div>
+          </figure>
+          <figure class="panel reveal">
+            <figcaption><strong>Who reaches out</strong><span>Share of contacts</span></figcaption>
+            <div class="split" id="sexSplit"></div>
+            <p class="panel-sub">Age group</p>
+            <div class="hbars hbars-compact" id="ageBars"></div>
+          </figure>
+        </div>
+        <p class="impact-source">Source: National Digital Mental Health Platform call records, January 2024 to 2026 (year to date). Percentages are rounded and leave out records with missing details. No personal information is published.</p>
       </div>
-      <!-- Impact data: fill in from the call-centre spreadsheet. Use null for figures not yet available. -->
       <script type="application/json" id="impactData">
-        {
-          "updated": null,
-          "kpis": [
-            { "label": "Total contacts", "value": null, "icon": "fa-headset" },
-            { "label": "Calls answered", "value": null, "icon": "fa-phone" },
-            { "label": "e-Counselling sessions", "value": null, "icon": "fa-laptop-medical" },
-            { "label": "Referrals to specialists", "value": null, "icon": "fa-user-doctor" }
-          ],
-          "byYear": []
-        }
+{
+  "kpis": [
+    {
+      "label": "Total contacts, 2024 to 2026",
+      "value": 1481,
+      "icon": "fa-headset"
+    },
+    {
+      "label": "Given psychological first aid",
+      "value": 640,
+      "icon": "fa-hand-holding-heart"
+    },
+    {
+      "label": "Referred for further support",
+      "value": 593,
+      "icon": "fa-user-doctor"
+    },
+    {
+      "label": "Regions reached, out of 16",
+      "value": 16,
+      "icon": "fa-map-location-dot"
+    }
+  ],
+  "byYear": [
+    {
+      "year": "2024",
+      "contacts": 305
+    },
+    {
+      "year": "2025",
+      "contacts": 673
+    },
+    {
+      "year": "2026*",
+      "contacts": 502
+    }
+  ],
+  "reasons": [
+    {
+      "label": "Emotional & psychological support",
+      "pct": 24
+    },
+    {
+      "label": "Enquiries & information",
+      "pct": 18
+    },
+    {
+      "label": "Depression",
+      "pct": 11
+    },
+    {
+      "label": "Help for someone else",
+      "pct": 10
+    },
+    {
+      "label": "Migrant support",
+      "pct": 7
+    },
+    {
+      "label": "Financial worries",
+      "pct": 7
+    },
+    {
+      "label": "Suicidal thoughts",
+      "pct": 6
+    },
+    {
+      "label": "Relationships & family",
+      "pct": 5
+    }
+  ],
+  "sex": [
+    {
+      "label": "Women",
+      "pct": 44
+    },
+    {
+      "label": "Men",
+      "pct": 56
+    }
+  ],
+  "age": [
+    {
+      "label": "Under 20",
+      "pct": 9
+    },
+    {
+      "label": "20–29",
+      "pct": 41
+    },
+    {
+      "label": "30–39",
+      "pct": 31
+    },
+    {
+      "label": "40–49",
+      "pct": 12
+    },
+    {
+      "label": "50+",
+      "pct": 8
+    }
+  ],
+  "firstTimePct": 86
+}
       </script>
     </section>
 
@@ -243,8 +347,8 @@
             <p>First, a member of the helpline team, who listens, assesses what you need and gives immediate support. If you need more help, a psychologist, psychiatrist or other specialist will then contact you.</p>
           </details>
           <details>
-            <summary>When can I call?</summary>
-            <p>The phone helpline is open 24 hours a day, 7 days a week, including weekends and public holidays.</p>
+            <summary>When can I call or message?</summary>
+            <p>The phone helpline and WhatsApp are both open 24 hours a day, 7 days a week, including weekends and public holidays.</p>
           </details>
           <details>
             <summary>How do I book an e-Counselling session?</summary>

@@ -273,18 +273,34 @@
   // ---------- Helpline impact report ----------
   const impactData = document.getElementById('impactData');
   if (impactData) {
-    let data = { kpis: [], byYear: [] };
+    let data = {};
     try { data = JSON.parse(impactData.textContent); } catch (e) { /* keep empty */ }
+
     const kpiGrid = document.getElementById('kpiGrid');
     kpiGrid.innerHTML = (data.kpis || []).map((k) => {
       const has = typeof k.value === 'number';
-      return `<div class="kpi reveal is-in"><i class="fa-solid ${escapeHtml(k.icon || 'fa-chart-simple')}" aria-hidden="true"></i>` +
+      return `<div class="kpi"><i class="fa-solid ${escapeHtml(k.icon || 'fa-chart-simple')}" aria-hidden="true"></i>` +
         `<span class="kpi-value${has ? '' : ' is-pending'}"${has ? ` data-count="${k.value}"` : ''}>${has ? '0' : '—'}</span>` +
         `<span class="kpi-label">${escapeHtml(k.label)}</span></div>`;
     }).join('');
-    kpiGrid.querySelectorAll('[data-count]').forEach((el) => countUp(el));
 
-    if (data.updated) document.getElementById('impactNote').textContent = 'Call-centre figures, updated ' + data.updated + '.';
+    // Horizontal percentage bars
+    function hbars(id, items) {
+      const el = document.getElementById(id);
+      if (!el || !items || !items.length) return;
+      const max = Math.max(...items.map((i) => i.pct));
+      el.innerHTML = items.map((i) => `<div class="hbar"><span class="hbar-label">${escapeHtml(i.label)}</span>` +
+        `<span class="hbar-track"><span class="hbar-fill" data-w="${Math.round((i.pct / max) * 100)}"></span></span>` +
+        `<span class="hbar-val">${i.pct}%</span></div>`).join('');
+    }
+    hbars('reasonBars', data.reasons);
+    hbars('ageBars', data.age);
+
+    const split = document.getElementById('sexSplit');
+    if (split && data.sex) {
+      split.innerHTML = `<div class="split-bar">${data.sex.map((s, n) => `<span class="split-seg split-${n}" style="flex:${s.pct}"></span>`).join('')}</div>` +
+        `<div class="split-legend">${data.sex.map((s, n) => `<span><i class="split-dot split-${n}"></i>${escapeHtml(s.label)} <strong>${s.pct}%</strong></span>`).join('')}</div>`;
+    }
 
     const chart = document.getElementById('trendChart');
     const years = (data.byYear || []).filter((d) => typeof d.contacts === 'number');
@@ -293,12 +309,29 @@
       chart.textContent = 'Yearly figures will appear here once the call-centre data is added.';
     } else {
       const max = Math.max(...years.map((d) => d.contacts));
-      document.getElementById('trendSub').textContent = years[0].year + '–' + years[years.length - 1].year;
       chart.setAttribute('aria-label', 'Helpline contacts by year: ' + years.map((d) => d.year + ', ' + fmt.format(d.contacts)).join('; '));
       chart.innerHTML = years.map((d) => `<div class="bar"><span class="bar-val">${fmt.format(d.contacts)}</span>` +
         `<span class="bar-fill" data-h="${Math.max(2, Math.round((d.contacts / max) * 78))}"></span>` +
         `<span class="bar-year">${escapeHtml(String(d.year))}</span></div>`).join('');
-      requestAnimationFrame(() => chart.querySelectorAll('.bar-fill').forEach((b) => { b.style.height = b.dataset.h + '%'; }));
+    }
+
+    // Animate counters and bars when the section scrolls into view
+    const section = document.getElementById('impact');
+    let played = false;
+    function play() {
+      if (played) return;
+      played = true;
+      kpiGrid.querySelectorAll('[data-count]').forEach((el) => countUp(el));
+      section.querySelectorAll('.bar-fill').forEach((b) => { b.style.height = b.dataset.h + '%'; });
+      section.querySelectorAll('.hbar-fill').forEach((b) => { b.style.width = b.dataset.w + '%'; });
+    }
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) { play(); io.disconnect(); }
+      }, { threshold: 0.15 });
+      io.observe(section);
+    } else {
+      play();
     }
   }
 
