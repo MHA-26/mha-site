@@ -5,13 +5,6 @@
   root.classList.add('js');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function store(key, value) {
-    try {
-      if (value === undefined) return localStorage.getItem(key);
-      localStorage.setItem(key, value);
-    } catch (e) { return null; }
-  }
-
   function toast(message) {
     let el = document.querySelector('.toast');
     if (!el) {
@@ -26,47 +19,6 @@
     el._t = setTimeout(() => el.classList.remove('is-visible'), 2200);
   }
 
-  // ---------- Accessibility tools ----------
-  const sizes = [14, 16, 18, 20];
-  let sizeIndex = Number(store('mha-font')) || 1;
-  function applySize() { root.style.setProperty('--base-size', sizes[sizeIndex] + 'px'); }
-  applySize();
-  document.querySelectorAll('[data-font]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const step = Number(btn.dataset.font);
-      sizeIndex = step === 0 ? 1 : Math.min(sizes.length - 1, Math.max(0, sizeIndex + step));
-      applySize();
-      store('mha-font', String(sizeIndex));
-    });
-  });
-
-  const contrastBtn = document.getElementById('contrastToggle');
-  function applyContrast(on) {
-    root.classList.toggle('hc', on);
-    contrastBtn && contrastBtn.setAttribute('aria-pressed', String(on));
-  }
-  applyContrast(store('mha-hc') === '1');
-  contrastBtn && contrastBtn.addEventListener('click', () => {
-    const on = !root.classList.contains('hc');
-    applyContrast(on);
-    store('mha-hc', on ? '1' : '0');
-  });
-
-  // ---------- Quick exit (button or Esc twice) ----------
-  function quickExit() {
-    window.open('https://www.google.com', '_blank', 'noopener');
-    window.location.replace('https://www.google.com');
-  }
-  const exitBtn = document.getElementById('quickExit');
-  exitBtn && exitBtn.addEventListener('click', quickExit);
-  let lastEsc = 0;
-  document.addEventListener('keydown', (e) => {
-    if (e.key !== 'Escape' || document.querySelector('dialog[open]') || document.body.classList.contains('nav-open')) return;
-    const now = Date.now();
-    if (now - lastEsc < 600) quickExit();
-    lastEsc = now;
-  });
-
   // ---------- Header ----------
   const header = document.querySelector('.site-header');
   const mobileHelp = document.querySelector('.mobile-help');
@@ -74,7 +26,7 @@
   function onScroll() {
     const y = window.scrollY;
     header && header.classList.toggle('is-scrolled', y > 8);
-    if (mobileHelp && hero) mobileHelp.classList.toggle('is-visible', y > hero.offsetHeight * 0.6);
+    if (mobileHelp) mobileHelp.classList.toggle('is-visible', y > (hero ? hero.offsetHeight * 0.6 : 240));
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -285,6 +237,37 @@
     dialog.addEventListener('click', (e) => {
       if (e.target === dialog || e.target.closest('[data-close]')) dialog.close();
     });
+  }
+
+  // ---------- Resource library filters ----------
+  const docGrid = document.getElementById('docGrid');
+  if (docGrid) {
+    const docs = Array.from(docGrid.querySelectorAll('.doc'));
+    const filters = document.querySelectorAll('.filter');
+    const search = document.getElementById('docSearch');
+    const empty = document.getElementById('docEmpty');
+    let active = 'all';
+    function applyFilters() {
+      const q = search.value.trim().toLowerCase();
+      let shown = 0;
+      docs.forEach((doc) => {
+        const match = (active === 'all' || doc.dataset.category === active) && doc.textContent.toLowerCase().includes(q);
+        doc.hidden = !match;
+        if (match) shown += 1;
+      });
+      empty.hidden = shown > 0;
+    }
+    filters.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        active = btn.dataset.filter;
+        filters.forEach((b) => {
+          b.classList.toggle('is-active', b === btn);
+          b.setAttribute('aria-pressed', String(b === btn));
+        });
+        applyFilters();
+      });
+    });
+    search.addEventListener('input', applyFilters);
   }
 
   // ---------- Footer year ----------
