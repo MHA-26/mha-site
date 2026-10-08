@@ -422,6 +422,67 @@
     });
   });
 
+  // ---------- Volunteer page: activity filters ----------
+  const actList = document.getElementById('activityList');
+  if (actList) {
+    const acts = Array.from(actList.querySelectorAll('.act'));
+    const actFilters = document.querySelectorAll('[data-act-filter]');
+    const actEmpty = document.getElementById('actEmpty');
+    actFilters.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const type = btn.dataset.actFilter;
+        actFilters.forEach((b) => {
+          b.classList.toggle('is-active', b === btn);
+          b.setAttribute('aria-pressed', String(b === btn));
+        });
+        let shown = 0;
+        acts.forEach((a) => {
+          const show = type === 'all' || a.dataset.actType === type;
+          a.hidden = !show;
+          if (show) shown += 1;
+        });
+        actEmpty.hidden = shown > 0;
+      });
+    });
+  }
+
+  // ---------- Volunteer page: registration (Google Form) ----------
+  const vForm = document.getElementById('volunteerForm');
+  if (vForm) {
+    const formUrl = (vForm.dataset.formUrl || '').trim();
+    const entry = (vForm.dataset.activityEntry || '').trim();
+    const formLink = (activity, embedded) => {
+      const u = new URL(formUrl);
+      if (embedded) u.searchParams.set('embedded', 'true');
+      if (activity && entry) u.searchParams.set(entry, activity);
+      return u.toString();
+    };
+    if (formUrl) {
+      vForm.innerHTML = '<p class="vl-form-chosen" id="formChosen" hidden></p>' +
+        `<iframe id="formFrame" src="${formLink('', true)}" title="Volunteer registration form" loading="lazy">Loading…</iframe>` +
+        `<a class="vl-form-open" id="formOpen" href="${formLink('', false)}" target="_blank" rel="noopener">Open the form in a new tab <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`;
+    }
+    document.querySelectorAll('[data-volunteer-for]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const activity = btn.dataset.volunteerFor;
+        if (formUrl) {
+          document.getElementById('formFrame').src = formLink(activity, true);
+          document.getElementById('formOpen').href = formLink(activity, false);
+          const chosen = document.getElementById('formChosen');
+          chosen.textContent = 'Volunteering for: ' + activity;
+          chosen.hidden = false;
+        } else {
+          const mailBtn = document.getElementById('formSoonMail');
+          mailBtn.href = 'mailto:info@mha.gov.gh?subject=' + encodeURIComponent('Volunteer pool: ' + activity);
+          mailBtn.textContent = 'Email us to volunteer for ' + activity;
+        }
+        // Activity name only; no personal details are sent to analytics
+        if (typeof window.gtag === 'function') window.gtag('event', 'volunteer_interest', { activity: activity });
+        document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  }
+
   // ---------- Footer year ----------
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
