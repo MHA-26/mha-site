@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/css/site.css" />
+  <link rel="stylesheet" href="assets/css/site.css?v=2026-10-08" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -141,7 +141,7 @@
               <p>Help run the anti-stigma launch event and street activities calling for an end to stigma against people living with mental illness.</p>
               <p class="act-roles"><span>Event support</span><span>Social media</span><span>Photography</span></p>
             </div>
-            <button type="button" class="btn btn-soft act-btn" data-volunteer-for="Show Your Love Campaign">Volunteer for this</button>
+            <button type="button" class="btn btn-soft act-btn" data-volunteer-for="Show Your Love Campaign" data-form-option="Show your love">Volunteer for this</button>
           </li>
           <li class="act reveal" data-act-type="campaign">
             <div class="act-when"><span>May</span></div>
@@ -151,7 +151,17 @@
               <p>A month of awareness walks, talks and community activities for mental health across the country.</p>
               <p class="act-roles"><span>Event support</span><span>Health talks</span><span>Community outreach</span></p>
             </div>
-            <button type="button" class="btn btn-soft act-btn" data-volunteer-for="May Is Purple Month">Volunteer for this</button>
+            <button type="button" class="btn btn-soft act-btn" data-volunteer-for="May Is Purple Month" data-form-option="Purple month">Volunteer for this</button>
+          </li>
+          <li class="act reveal" data-act-type="campaign">
+            <div class="act-when"><span>Sep</span></div>
+            <div class="act-body">
+              <p class="act-type">Campaign</p>
+              <h3>Suicide prevention month</h3>
+              <p>Help share messages of hope and where to find help during September, including World Suicide Prevention Day on 10 September.</p>
+              <p class="act-roles"><span>Social media</span><span>Community outreach</span><span>Event support</span></p>
+            </div>
+            <button type="button" class="btn btn-soft act-btn" data-volunteer-for="Suicide prevention month" data-form-option="World Suicide month">Volunteer for this</button>
           </li>
           <li class="act reveal" data-act-type="community">
             <div class="act-when"><span>Oct</span></div>
@@ -250,9 +260,9 @@
           </ul>
           <p class="vl-privacy"><i class="fa-solid fa-lock" aria-hidden="true"></i> We use your details only to organise volunteering, and handle them under the Data Protection Act, 2012 (Act 843). You can ask to be removed from the pool at any time.</p>
         </div>
-        <!-- Set data-form-url to the Google Form's link (Send → link). Optional: data-activity-entry = the
-             form's "entry.NNNN" id for the activity question, so "Volunteer for this" pre-selects it. -->
-        <div class="vl-form reveal" id="volunteerForm" data-form-url="" data-activity-entry="">
+        <!-- Google Form "Volunteering form". data-activity-entry = the activity question's id; an activity
+             button pre-selects the form option named in its data-form-option (must match the option text exactly). -->
+        <div class="vl-form reveal" id="volunteerForm" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSegln9E830PdemgbT0yFrVMO-jUsA1a4fcookE0C10G1OmJuw/viewform" data-activity-entry="entry.362529737">
           <div class="vl-form-soon" id="formSoon">
             <span class="status-pill"><span class="status-dot" aria-hidden="true"></span> Registration opens soon</span>
             <h3>Online registration is being set up</h3>
@@ -390,6 +400,6 @@
     <i class="fa-solid fa-phone-volume" aria-hidden="true"></i> Call 24/7 helpline · 0800 678 678
   </a>
 
-  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/site.js?v=2026-10-08" defer></script>
 </body>
 </html>

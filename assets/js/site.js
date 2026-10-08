@@ -465,11 +465,14 @@
     document.querySelectorAll('[data-volunteer-for]').forEach((btn) => {
       btn.addEventListener('click', () => {
         const activity = btn.dataset.volunteerFor;
+        const option = btn.dataset.formOption || '';
         if (formUrl) {
-          document.getElementById('formFrame').src = formLink(activity, true);
-          document.getElementById('formOpen').href = formLink(activity, false);
+          document.getElementById('formFrame').src = formLink(option, true);
+          document.getElementById('formOpen').href = formLink(option, false);
           const chosen = document.getElementById('formChosen');
-          chosen.textContent = 'Volunteering for: ' + activity;
+          chosen.textContent = option
+            ? 'Volunteering for: ' + activity + ' (selected in the form below)'
+            : 'Volunteering for: ' + activity + '. Please tick the closest activity in the form below.';
           chosen.hidden = false;
         } else {
           const mailBtn = document.getElementById('formSoonMail');
