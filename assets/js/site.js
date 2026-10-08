@@ -492,7 +492,8 @@
   // CHAT_LIVE: MHA's own inbox, used on the public site. Leave empty until it exists ("launching soon").
   // CHAT_TEST: temporary test inbox (mnemosmed.com), used ONLY when the site runs on this computer.
   const CHAT_LIVE = { baseUrl: '', websiteToken: '' };
-  const CHAT_TEST = { baseUrl: 'https://app.chatwoot.com', websiteToken: 'AUzLrySwMwNMgpHGF7efGUqS' };
+  // websiteToken is the PUBLIC widget token from the inbox's Messenger Script, never the secret/HMAC key.
+  const CHAT_TEST = { baseUrl: 'https://app.chatwoot.com', websiteToken: '' };
   const isLocalPreview = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
   const CHAT = isLocalPreview ? CHAT_TEST : CHAT_LIVE;
   const chatReady = !!(CHAT.baseUrl && CHAT.websiteToken);
