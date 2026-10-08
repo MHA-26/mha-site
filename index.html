@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <!-- Google Analytics (GA4) -->
@@ -9,922 +9,548 @@
     gtag('js', new Date());
     gtag('config', 'G-JYXGBT5XEB');
   </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mental Health Authority</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mental Health Authority | Ministry of Health, Ghana</title>
+  <meta name="description" content="The Mental Health Authority of Ghana promotes mental health and provides humane, accessible care for all. Call the 24/7 helpline on 0800 678 678." />
+  <meta name="theme-color" content="#4a1470" />
+  <link rel="icon" href="assets/img/mha-seal.webp" type="image/webp" />
 
-  <!-- Google Font: Open Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Font Awesome for social icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-
- 
-  <link rel="stylesheet" href="styles.css?v=2026-10-07" />
-  <!-- World Mental Health Day banner styles (kept inline so cached stylesheets can't break it) -->
-  <style>
-    .wmhd-wrap { display: flex; justify-content: center; padding: 18px 16px; background: #faf6fc; }
-    .wmhd-wrap[hidden] { display: none; }
-    .wmhd { box-sizing: border-box; display: flex; align-items: center; gap: 18px; width: 100%; max-width: 920px; margin: 0; padding: 10px 10px 10px 12px; border-radius: 999px; background: linear-gradient(100deg, #3d1259, #6a1b9a 55%, #7e2db0); color: #fff; box-shadow: 0 18px 40px -18px rgba(74, 20, 112, .75); font-family: "Open Sans", Arial, sans-serif; }
-    .wmhd *, .wmhd *::before, .wmhd *::after { box-sizing: border-box; }
-    .wmhd-chip { flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; background: #fff; color: #3d1259; font-weight: 800; font-size: 13px; line-height: 1.2; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
-    .wmhd-chip i { color: #2e8b3e; }
-    .wmhd-body { flex: 1; min-width: 0; }
-    .wmhd-text { margin: 0; font-size: 16px; line-height: 1.4; color: #eadcf5; }
-    .wmhd-text strong { color: #fff; font-weight: 700; }
-    .wmhd-text em { font-family: Georgia, "Times New Roman", serif; font-style: italic; color: #fff; }
-    .wmhd-sub { margin: 2px 0 0; font-size: 13px; line-height: 1.4; color: #d9c1ec; }
-    .wmhd-sub i { color: #b9f5c0; margin-right: 4px; }
-    .wmhd-btn { flex: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 20px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.6); background: rgba(255,255,255,.12); color: #fff !important; font-weight: 700; font-size: 14px; line-height: 1.2; text-decoration: none !important; white-space: nowrap; transition: background .25s, border-color .25s; }
-    .wmhd-btn:hover { background: rgba(255,255,255,.22); border-color: #fff; }
-    .wmhd-btn:focus-visible { outline: 3px solid #f4b63f; outline-offset: 3px; }
-    .wmhd-btn .fa-chevron-right { font-size: 11px; }
-    @media (max-width: 760px) {
-      .wmhd-wrap { padding: 14px 12px; }
-      .wmhd { flex-wrap: wrap; gap: 10px; border-radius: 20px; padding: 16px; }
-      .wmhd-chip { padding: 6px 12px; font-size: 12px; }
-      .wmhd-body { flex-basis: 100%; }
-      .wmhd-text { font-size: 15px; }
-      .wmhd-text strong { display: block; margin-bottom: 2px; }
-      .wmhd-btn { width: 100%; padding: 12px 16px; font-size: 15px; }
-    }
-  </style>
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/site.css?v=2026-10-08c" />
 </head>
 <body>
-  <header class="topbar">
-   
-    <div class="logo">
-      <img src="img/logo.png" alt="Mental Health Authority Logo" />
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-    </div>
-
-    <!-- Center: Navigation -->
-    <a class="mobile-top-helpline" href="tel:0800678678" aria-label="Call mental health helpline 0800 678 678">
-      <span class="mobile-top-helpline-label">Help Line</span>
-      <span class="mobile-top-helpline-number">0800 678 678</span>
-    </a>
-
-    <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-controls="mobileSidebar" aria-expanded="false">
-      ☰
-    </button>
-
-    <nav class="desktop-nav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li class="about dropdown">
-          <button class="about-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-            About
-          </button>
-          <ul class="dropdown-menu" role="menu" aria-label="About menu">
-            <li><a href="#" role="menuitem" onclick="event.preventDefault()">Roles &amp; Functions</a></li>
-            <li><a href="#" role="menuitem" onclick="event.preventDefault()">Our Team</a></li>
-            <li><a href="#" role="menuitem" onclick="event.preventDefault()">Organogram</a></li>
-            <li><a href="#" role="menuitem" onclick="event.preventDefault()">Health Partners</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="#footer">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="topbar-right">
-      <a class="topbar-helpline" href="tel:0800678678" aria-label="Call mental health helpline 0800 678 678">
-        <span class="topbar-helpline-label">24/7 Help Line</span>
-        <span class="topbar-helpline-number">0800 678 678</span>
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Mental Health Authority home">
+        <img src="assets/img/mha-wordmark.webp" alt="Mental Health Authority" width="205" height="80" />
       </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main">
+        <ul>
+          <li class="has-sub">
+            <button type="button" class="nav-sub-toggle" aria-expanded="false" aria-controls="aboutMenu">
+              About <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <ul class="sub-menu" id="aboutMenu">
+              <li><a href="#about"><i class="fa-solid fa-landmark" aria-hidden="true"></i><span><strong>Roles &amp; Functions</strong><small>Our mandate under Act 846</small></span></a></li>
+              <li><a href="team.html"><i class="fa-solid fa-people-group" aria-hidden="true"></i><span><strong>Our Team</strong><small>Leadership, departments and units</small></span></a></li>
+              <li><a href="research.html"><i class="fa-solid fa-microscope" aria-hidden="true"></i><span><strong>Research &amp; Ethics</strong><small>Research support and ethical review (IRB)</small></span></a></li>
+              <li><a href="volunteer.html"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i><span><strong>Volunteer</strong><small>Join our volunteer pool</small></span></a></li>
+              <li><a href="#partners"><i class="fa-solid fa-handshake" aria-hidden="true"></i><span><strong>Health Partners</strong><small>Who we work with</small></span></a></li>
+            </ul>
+          </li>
+          <li><a href="#support">Get support</a></li>
+          <li><a href="helpline.html">Helpline</a></li>
+          <li><a href="#facilities">Facilities</a></li>
+          <li><a href="#programmes">Programmes</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-help" href="tel:0800678678">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span class="btn-help-text"><small>24/7 Helpline</small>0800 678 678</span>
+        </a>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
-  <aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true" aria-label="Mobile navigation">
-    <div class="mobile-sidebar-header">
-      <img class="mobile-sidebar-logo" src="img/mha logo.png" alt="Mental Health Authority logo" />
-      <button class="mobile-close-btn" type="button" aria-label="Close menu">
-        ×
-      </button>
-    </div>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="blob blob-a"></span><span class="blob blob-b"></span><span class="blob blob-c"></span>
+      </div>
+      <!-- World Mental Health Day: hides itself automatically after data-end -->
+      <div class="container wmhd-wrap">
+        <aside class="wmhd" data-event-date="2026-10-10" data-end="2026-10-11" aria-label="World Mental Health Day 2026">
+          <span class="wmhd-chip"><i class="fa-solid fa-calendar-day" aria-hidden="true"></i> 10 Oct</span>
+          <div class="wmhd-body">
+            <p class="wmhd-text"><strong>World Mental Health Day:</strong><em>“Lived Experiences Heard: Real Voices, Real Change”</em></p>
+            <p class="wmhd-sub"><i class="fa-solid fa-users" aria-hidden="true"></i> Public lecture on Zoom · Open to everyone</p>
+          </div>
+          <a class="wmhd-btn" href="https://us02web.zoom.us/j/84829568165?pwd=aHbbrob4Tuswf3PGmMHKxS5IiWlELd.1" target="_blank" rel="noopener noreferrer" aria-label="Join the World Mental Health Day public lecture on Zoom (opens in a new tab)">
+            Join the public lecture <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </a>
+        </aside>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Total health for every Ghanaian</p>
+          <h1 id="heroTitle">Mental health <em>is</em> health. <span class="hero-line">No one should face it alone.</span></h1>
+          <p class="lead">
+            The Mental Health Authority leads Ghana’s work to promote mental wellbeing, end stigma and make humane,
+            community-based care available to everyone who needs it.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary btn-lg" href="#support">Find support <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost btn-lg" href="#checkin">How are you feeling?</a>
+          </div>
+          <ul class="hero-trust" aria-label="Key facts">
+            <li><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> Confidential</li>
+            <li><i class="fa-solid fa-clock" aria-hidden="true"></i> Available 24/7</li>
+            <li><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Rights-based care</li>
+          </ul>
+        </div>
 
-    <ul class="mobile-nav-list">
-      <li><a href="#">Home</a></li>
+        <div class="hero-visual">
+          <figure class="hero-photo">
+            <img src="assets/img/campaign-leaders-1600.webp"
+              srcset="assets/img/campaign-leaders-800.webp 800w, assets/img/campaign-leaders-1600.webp 1600w"
+              sizes="(max-width: 900px) 92vw, 46vw"
+              alt="Officials and advocates at the Show Your Love campaign to end stigma against persons living with mental illness"
+              width="1600" height="1067" fetchpriority="high" />
+          </figure>
+          <a class="float-card float-call" href="tel:0800678678">
+            <span class="float-icon"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i></span>
+            <span><small>Need to talk? Call now</small><strong>0800 678 678</strong></span>
+          </a>
+          <div class="float-card float-quote">
+            <img src="assets/img/show-your-love.webp" alt="" width="56" height="56" />
+            <span><small>Show Your Love</small><strong>End stigma together</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <li class="mobile-about">
-        <button class="mobile-about-toggle" type="button" aria-expanded="false">
-          About
-        </button>
-        <ul class="mobile-dropdown" aria-label="About menu">
-          <li><a href="#" onclick="event.preventDefault()">Roles &amp; Functions</a></li>
-          <li><a href="#" onclick="event.preventDefault()">Our Team</a></li>
-          <li><a href="#" onclick="event.preventDefault()">Organogram</a></li>
-          <li><a href="#" onclick="event.preventDefault()">Health Partners</a></li>
+    <!-- Crisis strip -->
+    <section class="crisis-strip" aria-label="Urgent help">
+      <div class="container crisis-inner">
+        <p><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+          <strong>In immediate danger or thinking of ending your life?</strong>
+          Call <a href="tel:0800678678">0800 678 678</a> or go to the nearest hospital emergency unit now.
+        </p>
+        <a class="crisis-link" href="tel:0800678678">Talk to the helpline <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+
+    <!-- Mood check-in -->
+    <section class="section checkin" id="checkin" aria-labelledby="checkinTitle">
+      <div class="container checkin-grid">
+        <div class="checkin-intro reveal">
+          <p class="kicker">Daily check-in</p>
+          <h2 id="checkinTitle">How are you feeling today?</h2>
+          <p>Choose what fits best. We’ll suggest a next step. Nothing you choose is saved or sent anywhere.</p>
+        </div>
+        <div class="checkin-card reveal">
+          <div class="mood-options" role="radiogroup" aria-label="Choose your mood">
+            <button type="button" class="mood" role="radio" aria-checked="false" data-mood="good"><span class="mood-emoji" aria-hidden="true">😊</span>Good</button>
+            <button type="button" class="mood" role="radio" aria-checked="false" data-mood="okay"><span class="mood-emoji" aria-hidden="true">🙂</span>Okay</button>
+            <button type="button" class="mood" role="radio" aria-checked="false" data-mood="stressed"><span class="mood-emoji" aria-hidden="true">😣</span>Stressed</button>
+            <button type="button" class="mood" role="radio" aria-checked="false" data-mood="low"><span class="mood-emoji" aria-hidden="true">😔</span>Low</button>
+            <button type="button" class="mood" role="radio" aria-checked="false" data-mood="crisis"><span class="mood-emoji" aria-hidden="true">🆘</span>I’m not safe</button>
+          </div>
+          <div class="mood-result" id="moodResult" aria-live="polite">
+            <p class="mood-placeholder"><i class="fa-regular fa-hand-point-up" aria-hidden="true"></i> Pick a feeling to see a suggestion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support bento -->
+    <section class="section support" id="support" aria-labelledby="supportTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Get support</p>
+          <h2 id="supportTitle">Help for you, your family and your community</h2>
+          <p>Whether you need someone to talk to, care close to home or information for someone you love, start here.</p>
+        </div>
+
+        <div class="bento">
+          <a class="tile tile-feature reveal" href="tel:0800678678">
+            <span class="tile-icon"><i class="fa-solid fa-headset" aria-hidden="true"></i></span>
+            <h3>Talk to someone now</h3>
+            <p>Call the national mental health helpline, day or night. You don’t have to be in crisis to call.</p>
+            <span class="tile-big">0800 678 678</span>
+            <span class="tile-cta">Call the helpline <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+          <a class="tile reveal" href="#facilities">
+            <span class="tile-icon"><i class="fa-solid fa-hospital" aria-hidden="true"></i></span>
+            <h3>Find a facility</h3>
+            <p>Psychiatric hospitals and services across the country.</p>
+            <span class="tile-cta">See facilities <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+          <a class="tile tile-rights reveal" href="#about">
+            <span class="tile-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span>
+            <h3>Know your rights</h3>
+            <p>The Mental Health Act, 2012 (Act 846) protects the dignity and rights of every person receiving care.</p>
+            <span class="tile-cta">About our mandate <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breathing exercise -->
+    <section class="section breathe" id="breathe" aria-labelledby="breatheTitle">
+      <div class="container breathe-grid">
+        <div class="breathe-copy reveal">
+          <p class="kicker kicker-light">One-minute reset</p>
+          <h2 id="breatheTitle">Take a breath with us</h2>
+          <p>Box breathing can slow a racing heart and quiet a busy mind. Follow the circle: breathe in, hold, breathe out, hold, for four counts each.</p>
+          <div class="breathe-controls">
+            <button type="button" class="btn btn-light btn-lg" id="breatheToggle" aria-pressed="false">
+              <i class="fa-solid fa-play" aria-hidden="true"></i> <span>Start</span>
+            </button>
+            <p class="breathe-rounds" id="breatheRounds" aria-live="polite">0 breaths</p>
+          </div>
+        </div>
+        <div class="breathe-stage reveal" aria-hidden="true">
+          <div class="breathe-ring">
+            <div class="breathe-orb" id="breatheOrb"></div>
+            <div class="breathe-label"><span id="breathePhase">Ready</span><strong id="breatheCount">4</strong></div>
+          </div>
+        </div>
+        <p class="visually-hidden" id="breatheStatus" aria-live="assertive"></p>
+      </div>
+    </section>
+
+    <!-- Impact stats -->
+    <section class="section impact" aria-labelledby="impactTitle">
+      <div class="container">
+        <div class="section-head section-head-split reveal">
+          <div>
+            <p class="kicker">Our impact</p>
+            <h2 id="impactTitle">Care that reaches people</h2>
+          </div>
+          <p>We are expanding mental health care from our specialist hospitals into communities, so more people get help early and close to home.</p>
+        </div>
+        <div class="stats">
+          <div class="stat reveal">
+            <span class="stat-icon"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></span>
+            <p class="stat-num"><span data-count="85">0</span>+</p>
+            <p class="stat-label">Psychiatrists</p>
+          </div>
+          <div class="stat reveal">
+            <span class="stat-icon"><i class="fa-solid fa-hospital" aria-hidden="true"></i></span>
+            <p class="stat-num"><span data-count="3">0</span></p>
+            <p class="stat-label">Psychiatric hospitals</p>
+          </div>
+          <div class="stat stat-wide reveal">
+            <span class="stat-icon"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i></span>
+            <p class="stat-num"><span data-count="178304">0</span></p>
+            <p class="stat-label">Total treatments in 2025</p>
+          </div>
+          <div class="stat reveal">
+            <span class="stat-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+            <p class="stat-num">24/7</p>
+            <p class="stat-label">National helpline</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Myths vs facts -->
+    <section class="section myths" id="myths" aria-labelledby="mythsTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Break the stigma</p>
+          <h2 id="mythsTitle">Myth or fact?</h2>
+          <p>Stigma stops people from seeking help. Tap a card to see the truth.</p>
+        </div>
+        <div class="flip-grid">
+          <button type="button" class="flip reveal" aria-pressed="false">
+            <span class="flip-inner">
+              <span class="flip-face flip-front"><span class="tag tag-myth">Myth</span>Mental illness is caused by a curse or a weak character.</span>
+              <span class="flip-face flip-back"><span class="tag tag-fact">Fact</span>Mental health conditions are health conditions with biological, psychological and social causes. They can be treated.</span>
+            </span>
+          </button>
+          <button type="button" class="flip reveal" aria-pressed="false">
+            <span class="flip-inner">
+              <span class="flip-face flip-front"><span class="tag tag-myth">Myth</span>People with mental illness are dangerous.</span>
+              <span class="flip-face flip-back"><span class="tag tag-fact">Fact</span>People living with mental illness are far more likely to be victims of violence than to cause it.</span>
+            </span>
+          </button>
+          <button type="button" class="flip reveal" aria-pressed="false">
+            <span class="flip-inner">
+              <span class="flip-face flip-front"><span class="tag tag-myth">Myth</span>Once you have a mental illness, you never get better.</span>
+              <span class="flip-face flip-back"><span class="tag tag-fact">Fact</span>With the right treatment and support, many people recover and live full, productive lives.</span>
+            </span>
+          </button>
+          <button type="button" class="flip reveal" aria-pressed="false">
+            <span class="flip-inner">
+              <span class="flip-face flip-front"><span class="tag tag-myth">Myth</span>Asking someone about suicide puts the idea in their head.</span>
+              <span class="flip-face flip-back"><span class="tag tag-fact">Fact</span>Asking directly and kindly shows you care, and can open the door to getting help.</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programmes -->
+    <section class="section programmes" id="programmes" aria-labelledby="progTitle">
+      <div class="container">
+        <div class="section-head section-head-split reveal">
+          <div>
+            <p class="kicker">Programmes &amp; campaigns</p>
+            <h2 id="progTitle">Changing minds, nationwide</h2>
+          </div>
+          <a class="text-link" href="#news">Latest updates <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="prog-grid">
+          <article class="prog prog-purple reveal">
+            <div class="prog-art"><img src="assets/img/purple-month.webp" alt="May is Purple Month" loading="lazy" /></div>
+            <div class="prog-body">
+              <p class="prog-tag">Every May</p>
+              <h3>May Is Purple Month</h3>
+              <p>A month of awareness, conversation and community action for mental health across Ghana.</p>
+            </div>
+          </article>
+          <article class="prog prog-red reveal">
+            <div class="prog-art"><img src="assets/img/show-your-love.webp" alt="Show Your Love Campaign" loading="lazy" /></div>
+            <div class="prog-body">
+              <p class="prog-tag">Anti-stigma</p>
+              <h3>Show Your Love Campaign</h3>
+              <p>Calling on every Ghanaian to end stigma against persons living with mental illness.</p>
+            </div>
+          </article>
+          <article class="prog prog-green reveal">
+            <div class="prog-art prog-art-type"><span>Dzramdo</span><small>Project</small></div>
+            <div class="prog-body">
+              <p class="prog-tag">Community</p>
+              <h3>Dzramdo Project</h3>
+              <p>Bringing mental health support closer to communities and the families who care for them.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- News -->
+    <section class="section news" id="news" aria-labelledby="newsTitle">
+      <div class="container">
+        <div class="section-head section-head-split reveal">
+          <div>
+            <p class="kicker">Newsroom</p>
+            <h2 id="newsTitle">News &amp; events</h2>
+          </div>
+          <a class="text-link" href="#news">All news <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="news-grid">
+          <article class="news-card news-lead reveal">
+            <a href="#news" class="news-media">
+              <img src="assets/img/campaign-speech-1600.webp"
+                srcset="assets/img/campaign-speech-800.webp 800w, assets/img/campaign-speech-1600.webp 1600w"
+                sizes="(max-width: 900px) 92vw, 58vw" alt="A speaker addresses the Show Your Love 2026 campaign launch" loading="lazy" />
+            </a>
+            <div class="news-body">
+              <p class="news-meta"><span class="chip">Campaign</span> 2026</p>
+              <h3><a href="#news">Show Your Love 2026 campaign launched</a></h3>
+              <p>Staff, partners and advocates came together in red to call for an end to stigma against persons living with mental illness.</p>
+            </div>
+          </article>
+          <article class="news-card reveal">
+            <a href="#news" class="news-media">
+              <img src="assets/img/campaign-team-800.webp" alt="Mental Health Authority staff at an event" loading="lazy" />
+            </a>
+            <div class="news-body">
+              <p class="news-meta"><span class="chip">Corporate</span> 2025</p>
+              <h3><a href="#news">Annual Performance Review 2025</a></h3>
+              <p>A look back at the year’s progress in mental health service delivery.</p>
+            </div>
+          </article>
+          <article class="news-card reveal">
+            <a href="#news" class="news-media">
+              <img src="assets/img/campaign-leaders-800.webp" alt="Community members at an outreach event" loading="lazy" />
+            </a>
+            <div class="news-body">
+              <p class="news-meta"><span class="chip">Outreach</span> Community</p>
+              <h3><a href="#news">Mental health screening at Makola</a></h3>
+              <p>Free screening and conversations about wellbeing with traders and shoppers.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities -->
+    <section class="section facilities" id="facilities" aria-labelledby="facTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Facilities</p>
+          <h2 id="facTitle">Our psychiatric hospitals</h2>
+          <p>Specialist inpatient and outpatient care, supported by regional and district mental health services.</p>
+        </div>
+        <div class="fac-grid">
+          <article class="fac reveal">
+            <span class="fac-num">01</span>
+            <h3>Accra Psychiatric Hospital</h3>
+            <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Accra, Greater Accra Region</p>
+            <div class="fac-links">
+              <a class="text-link" href="https://accrapsychiatrichospital.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Accra Psychiatric Hospital website (opens in a new tab)">Visit website <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+              <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Accra+Psychiatric+Hospital" target="_blank" rel="noopener noreferrer">Get directions <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="fac reveal">
+            <span class="fac-num">02</span>
+            <h3>Pantang Hospital</h3>
+            <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Pantang, Greater Accra Region</p>
+            <div class="fac-links">
+              <a class="text-link" href="https://pantanghospital.gov.gh/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Pantang Hospital website (opens in a new tab)">Visit website <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+              <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Pantang+Hospital" target="_blank" rel="noopener noreferrer">Get directions <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="fac reveal">
+            <span class="fac-num">03</span>
+            <h3>Ankaful Psychiatric Hospital</h3>
+            <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ankaful, Central Region</p>
+            <div class="fac-links">
+              <!-- Website link withheld: ankafulpsychiatrichospital.org currently redirects to a gambling site (Oct 2026). Add it back once the hospital has fixed it. -->
+              <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Ankaful+Psychiatric+Hospital" target="_blank" rel="noopener noreferrer">Get directions <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / mandate -->
+    <section class="section about" id="about" aria-labelledby="aboutTitle">
+      <div class="container about-grid">
+        <div class="about-seal reveal">
+          <img src="assets/img/mha-seal.webp" alt="Mental Health Authority seal: Total Health" width="320" height="320" loading="lazy" />
+        </div>
+        <div class="about-copy reveal">
+          <p class="kicker">Who we are</p>
+          <h2 id="aboutTitle">A national authority for mental health</h2>
+          <p>Established under the Mental Health Act, 2012 (Act 846), the Mental Health Authority is an agency of the Ministry of Health. We promote mental health and provide humane care that respects the rights of every person.</p>
+          <ul class="checks">
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Set policy and standards for mental health care</li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Bring services into communities and primary care</li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Protect the rights of people receiving care</li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Lead public education against stigma</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="section partners" id="partners" aria-labelledby="partnersTitle">
+      <div class="container">
+        <h2 class="partners-title" id="partnersTitle">Working together with our partners</h2>
+      </div>
+      <div class="marquee" aria-label="Partner organisations">
+        <ul class="marquee-track">
+          <li><img src="assets/img/partner-chag.webp" alt="Christian Health Association of Ghana" loading="lazy" /></li>
+          <li><img src="assets/img/partner-fcdo.webp" alt="UK Foreign, Commonwealth &amp; Development Office" loading="lazy" /></li>
+          <li><img src="assets/img/partner-iom.webp" alt="International Organization for Migration" loading="lazy" /></li>
+          <li><img src="assets/img/partner-gpa.webp" alt="Ghana Psychological Association" loading="lazy" /></li>
+          <li><img src="assets/img/partner-bn.webp" alt="BasicNeeds Ghana" loading="lazy" /></li>
+          <li><img src="assets/img/partner-mindfreedom.webp" alt="MindFreedom Ghana" loading="lazy" /></li>
         </ul>
-      </li>
-
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Events</a></li>
-      <li><a href="#">Resources</a></li>
-      <li><a href="#footer" class="mobile-contact-link">Contact</a></li>
-    </ul>
-
-    <div class="mobile-sidebar-social" aria-label="Social media links">
-      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-      <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-    </div>
-  </aside>
-
-  <!-- World Mental Health Day announcement: hides itself automatically from 11 October 2026 -->
-  <div class="wmhd-wrap" data-hide-from="2026-10-11">
-    <aside class="wmhd" aria-label="World Mental Health Day 2026 public lecture">
-      <span class="wmhd-chip"><i class="fa-solid fa-calendar-day" aria-hidden="true"></i> 10 Oct</span>
-      <div class="wmhd-body">
-        <p class="wmhd-text"><strong>World Mental Health Day:</strong> <em>&ldquo;Lived Experiences Heard: Real Voices, Real Change&rdquo;</em></p>
-        <p class="wmhd-sub"><i class="fa-solid fa-users" aria-hidden="true"></i> Public lecture on Zoom &middot; Open to everyone</p>
       </div>
-      <a class="wmhd-btn" href="https://us02web.zoom.us/j/84829568165?pwd=aHbbrob4Tuswf3PGmMHKxS5IiWlELd.1" target="_blank" rel="noopener noreferrer" aria-label="Join the World Mental Health Day public lecture on Zoom (opens in a new tab)">
-        Join the public lecture <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-      </a>
-    </aside>
-  </div>
+    </section>
 
-  <section class="hero-slider" aria-label="Health programs slideshow">
-    <!-- Slide 1 -->
-    <article class="hero-slide is-active" data-slide-index="0">
-      <div class="hero-card">
-        <!-- Left: program content -->
-        <div class="hero-left">
-          <div class="hero-program-content">
-            <h1 class="hero-title">
-              National Immunization Awareness Program
-            </h1>
-            <p class="hero-text">
-              Protecting communities through timely vaccinations, education, and accessible
-              clinics across all regions.
-            </p>
-            <button class="hero-cta" type="button">
-              Learn About This Program
-            </button>
+    <!-- Donate -->
+    <section class="section donate" id="donate" aria-labelledby="donateTitle">
+      <div class="container">
+        <div class="donate-card reveal">
+          <div class="donate-copy">
+            <p class="kicker kicker-light">Make a difference</p>
+            <h2 id="donateTitle">Support the Mental Health Authority’s work</h2>
+            <p>Your gift helps fund outreach, anti-stigma campaigns and care for people living with mental illness.</p>
+            <div class="donate-ways">
+              <div class="way">
+                <small>Dial shortcode</small>
+                <strong>*725*6225#</strong>
+                <button type="button" class="copy-btn" data-copy="*725*6225#"><i class="fa-regular fa-copy" aria-hidden="true"></i> Copy</button>
+              </div>
+              <div class="way">
+                <small>MTN Mobile Money</small>
+                <strong>0538 806 295</strong>
+                <span class="way-sub">Merchant no. 433185</span>
+              </div>
+            </div>
+            <div class="donate-actions">
+              <button type="button" class="btn btn-light" id="openDonate" aria-haspopup="dialog">View donation flyer</button>
+              <a class="btn btn-outline-light" href="volunteer.html">Volunteer your time <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
           </div>
-        </div>
-
-        <!-- Right: main image -->
-        <div class="hero-right">
-          <div class="hero-main-image">
-            <img
-              src="img/1.jpg"
-              alt="Health workers providing immunization services"
-              class="hero-main-img"
-            />
-          </div>
-        </div>
-
-       
-        <div class="hero-thumbs-row" aria-label="Additional images for this program">
-          <div class="hero-thumbs">
-            <button class="hero-thumb is-active" type="button" data-main-src="img/1.jpg">
-              <img src="img/1.jpg" alt="Immunization clinic overview" />
-            </button>
-            <button class="hero-thumb" type="button" data-main-src="img/2.jpg">
-              <img src="img/2.jpg" alt="Nurse administering vaccine" />
-            </button>
+          <div class="donate-art" aria-hidden="true">
+            <i class="fa-solid fa-hand-holding-heart"></i>
           </div>
         </div>
       </div>
-    </article>
+    </section>
+  </main>
 
-    <!-- Slide 2 -->
-    <article class="hero-slide" data-slide-index="1">
-      <div class="hero-card">
-        <div class="hero-left">
-          <div class="hero-program-content">
-            <h1 class="hero-title">
-              Maternal and Child Health Services
-            </h1>
-            <p class="hero-text">
-              Comprehensive antenatal, delivery, and postnatal care to ensure safe motherhood
-              and healthy children in every community.
-            </p>
-            <button class="hero-cta" type="button">
-              Explore Services
-            </button>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="hero-main-image">
-            <img
-              src="img/4.jpg"
-              alt="Mother and child during health check"
-              class="hero-main-img"
-            />
-          </div>
-        </div>
-
-        <div class="hero-thumbs-row" aria-label="Additional images for this program">
-          <div class="hero-thumbs">
-            <button class="hero-thumb is-active" type="button" data-main-src="img/4.jpg">
-              <img src="img/4.jpg" alt="Clinic consultation" />
-            </button>
-            <button class="hero-thumb" type="button" data-main-src="img/2.jpg">
-              <img src="img/2.jpg" alt="Midwife supporting mother" />
-            </button>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Navigation arrows -->
-    <button class="hero-nav hero-nav-prev" type="button" aria-label="Previous program">
-      ‹
-    </button>
-    <button class="hero-nav hero-nav-next" type="button" aria-label="Next program">
-      ›
-    </button>
-
-    <!-- Dots -->
-    <div class="hero-dots" role="tablist" aria-label="Select program slide">
-      <button
-        class="hero-dot is-active"
-        type="button"
-        role="tab"
-        aria-selected="true"
-        aria-label="Go to slide 1"
-        data-target-slide="0"
-      ></button>
-      <button
-        class="hero-dot"
-        type="button"
-        role="tab"
-        aria-selected="false"
-        aria-label="Go to slide 2"
-        data-target-slide="1"
-      ></button>
-    </div>
-  </section>
-
-  <section class="programs" aria-label="Programs and initiatives">
-    <div class="programs-inner">
-      <div class="programs-header reveal-on-scroll">
-        <div class="section-header">
-          <h2 class="programs-title">Programs &amp; Initiatives</h2>
-          <div class="section-progress" aria-hidden="true">
-            <span class="section-progress-dot"></span>
-            <span class="section-progress-line"></span>
-            <span class="section-progress-dot"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="program-cards reveal-on-scroll" aria-label="Programs and initiatives list">
-        <article class="program-card">
-          <div class="program-card-media" aria-hidden="true">
-            <img class="program-card-img" src="img/Purple Month-02.png" alt="" />
-          </div>
-        </article>
-        <article class="program-card">
-          <div class="program-card-media" aria-hidden="true">
-            <img class="program-card-img" src="img/Show ur love.png" alt="" />
-          </div>
-        </article>
-        <article class="program-card">
-          <h3 class="program-card-title program-card-title--dzramdo">
-            Dzramdo<br />Project
-          </h3>
-        </article>
-      </div>
-
-      <div class="stats-band" aria-label="Mental health statistics">
-        <div class="stats-row reveal-on-scroll">
-          <div class="stat-item">
-            <div class="stat-icon" aria-hidden="true">
-              <img
-                class="stat-asset-img"
-                src="img/Asset 2Nurse.png"
-                alt=""
-              />
-            </div>
-            <div class="stat-text">
-              <div class="stat-label">Psychiatrists</div>
-              <div class="stat-number">85+</div>
-            </div>
-          </div>
-
-          <div class="stat-item">
-            <div class="stat-icon" aria-hidden="true">
-              <img
-                class="stat-asset-img"
-                src="img/Asset 2Psychiatric.png"
-                alt=""
-              />
-            </div>
-            <div class="stat-text">
-              <div class="stat-label">Psychiatric Hospitals</div>
-              <div class="stat-number">3</div>
-            </div>
-          </div>
-
-          <div class="stat-item">
-            <div class="stat-icon" aria-hidden="true">
-              <img
-                class="stat-asset-img"
-                src="img/Asset 2 Pateint.png"
-                alt=""
-              />
-            </div>
-            <div class="stat-text">
-              <div class="stat-label">Total Treatment</div>
-              <div class="stat-year">2025</div>
-              <div class="stat-number">178,304</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-header reveal-on-scroll" aria-label="News section header">
-        <h2 class="news-title">NEWS</h2>
-        <div class="news-progress" aria-hidden="true">
-          <span class="news-progress-dot"></span>
-          <span class="news-progress-line"></span>
-          <span class="news-progress-dot"></span>
-        </div>
-      </div>
-
-      <div class="news-posts reveal-on-scroll" aria-label="Latest news posts">
-        <a class="news-card" href="#" role="button" aria-label="Open news: Show your Love 2026 Campaign" onclick="event.preventDefault()">
-          <img
-            class="news-card-img"
-            src="img/5.jpg"
-            alt="News event coverage"
-          />
-          <div class="news-card-body">
-            <div class="news-card-tag">Latest News</div>
-            <h3 class="news-card-title">Show your Love 2026 Campaign</h3>
-            <p class="news-card-excerpt">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-              ullamco laboris.
-            </p>
-          </div>
-        </a>
-
-        <a class="news-card" href="#" role="button" aria-label="Open news: Annual Performance Review 2025" onclick="event.preventDefault()">
-          <img
-            class="news-card-img"
-            src="img/2.jpg"
-            alt="Annual review meeting"
-          />
-          <div class="news-card-body">
-            <div class="news-card-tag">Latest News</div>
-            <h3 class="news-card-title">Annual Performance Review 2025</h3>
-            <p class="news-card-excerpt">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-              ullamco laboris.
-            </p>
-          </div>
-        </a>
-
-        <a class="news-card" href="#" role="button" aria-label="Open news: Mental Health Screening at Makola" onclick="event.preventDefault()">
-          <img
-            class="news-card-img"
-            src="img/4.jpg"
-            alt="Mental health screening event"
-          />
-          <div class="news-card-body">
-            <div class="news-card-tag">Latest News</div>
-            <h3 class="news-card-title">Mental Health Screening at Makola</h3>
-            <p class="news-card-excerpt">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-              ullamco laboris.
-            </p>
-          </div>
-        </a>
-      </div>
-
-      <div class="stakeholders" aria-label="Stakeholders section">
-        <div class="stakeholders-header reveal-on-scroll">
-          <div class="section-header">
-            <h2 class="programs-title stakeholders-title">STAKEHOLDERS</h2>
-            <div class="section-progress" aria-hidden="true">
-              <span class="section-progress-dot"></span>
-              <span class="section-progress-line"></span>
-              <span class="section-progress-dot"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="stakeholders-carousel" aria-label="Stakeholder logos carousel">
-          <div class="stakeholders-track" aria-hidden="true">
-            <!-- Set 1 -->
-            <div class="stakeholder-item">
-              <img class="stakeholder-logo" src="img/BN-Logo.png" alt="" />
-            </div>
-            <div class="stakeholder-item">
-              <img class="stakeholder-logo" src="img/CHAG LOGO.png" alt="" />
-            </div>
-            <div class="stakeholder-item">
-              <img class="stakeholder-logo" src="img/FCDO-01.png" alt="" />
-            </div>
-            <div class="stakeholder-item">
-              <img class="stakeholder-logo" src="img/GPA LOGO.png" alt="" />
-            </div>
-            <div class="stakeholder-item">
-              <img class="stakeholder-logo" src="img/IOM-Visibiliy.png" alt="" />
-            </div>
-
-            <!-- Set 2 (duplicate for seamless loop) -->
-            <div class="stakeholder-item">
-              <img class="stakeholder-logo" src="img/BN-Logo.png" alt="" />
-            </div>
-            <div class="stakeholder-item">
-              <img class="stakeholder-logo" src="img/CHAG LOGO.png" alt="" />
-            </div>
-            <div class="stakeholder-item">
-              <img class="stakeholder-logo" src="img/FCDO-01.png" alt="" />
-            </div>
-            <div class="stakeholder-item">
-              <img class="stakeholder-logo" src="img/GPA LOGO.png" alt="" />
-            </div>
-            <div class="stakeholder-item">
-              <img class="stakeholder-logo" src="img/IOM-Visibiliy.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer id="footer" class="site-footer" aria-label="Site footer">
-    <div class="footer-inner">
+  <!-- Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="img/mha logo.png" alt="Mental Health Authority logo" />
-        </div>
-
-        <div class="footer-social" aria-label="Social media links">
-          <a href="#" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-          </a>
-          <a href="#" aria-label="Facebook">
-            <i class="fab fa-facebook-f" aria-hidden="true"></i>
-          </a>
-          <a href="#" aria-label="Instagram">
-            <i class="fab fa-instagram" aria-hidden="true"></i>
-          </a>
-          <a href="#" aria-label="YouTube">
-            <i class="fab fa-youtube" aria-hidden="true"></i>
-          </a>
-          <a href="#" aria-label="X (Twitter)">
-            <i class="fab fa-x-twitter" aria-hidden="true"></i>
-          </a>
-          <a href="#" aria-label="TikTok">
-            <i class="fab fa-tiktok" aria-hidden="true"></i>
-          </a>
+        <img src="assets/img/mha-seal.webp" alt="" width="72" height="72" loading="lazy" />
+        <p><strong>Mental Health Authority</strong><br />Ministry of Health, Republic of Ghana</p>
+        <div class="socials" aria-label="Social media">
+          <a href="https://www.linkedin.com/company/mental-health-authority-ghana/" target="_blank" rel="noopener noreferrer" aria-label="Mental Health Authority on LinkedIn (opens in a new tab)"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/mentalhealthauthority/" target="_blank" rel="noopener noreferrer" aria-label="Mental Health Authority on Facebook (opens in a new tab)"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/mha.ghana/" target="_blank" rel="noopener noreferrer" aria-label="Mental Health Authority on Instagram (opens in a new tab)"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@mentalhealthauthority" target="_blank" rel="noopener noreferrer" aria-label="Mental Health Authority on YouTube (opens in a new tab)"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          <a href="https://x.com/mha_ghana" target="_blank" rel="noopener noreferrer" aria-label="Mental Health Authority on X (Twitter) (opens in a new tab)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.tiktok.com/@mha.ghana" target="_blank" rel="noopener noreferrer" aria-label="Mental Health Authority on TikTok (opens in a new tab)"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
         </div>
       </div>
-
-      <div class="footer-columns">
-        <div class="footer-col">
-          <h4>Hospitals</h4>
-          <ul>
-            <li><a href="#">Accra Psychiatric Hospital</a></li>
-            <li><a href="#">Pantang Hospital</a></li>
-            <li><a href="#">Ankafu Hospital</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Leadership</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">News</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact Us</h4>
-          <div class="footer-contact">
-            <p>
-              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-              <span>info@mha.gov.gh</span>
-            </p>
-            <p>
-              <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              <span class="footer-phone-line"><strong>Authority Line:</strong> 0303 964 878</span>
-            </p>
-            <p class="footer-donate-row">
-              <button
-                class="footer-donate-btn"
-                type="button"
-                id="openDonationPopup"
-                aria-haspopup="dialog"
-                aria-controls="donationPopup"
-              >
-                Click to Donate
-              </button>
-            </p>
-            <p>
-              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-              <a
-                class="footer-location-link"
-                href="https://www.google.com/maps/search/?api=1&query=Old+Race+Course+Rd%2C+Accra"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Old Race Course Rd, Accra
-              </a>
-            </p>
-          </div>
-        </div>
+      <div>
+        <h3>Get help</h3>
+        <ul>
+          <li><a href="helpline.html">National e-Counselling</a></li>
+          <li><a href="tel:112">Emergency: 112</a></li>
+          <li><a href="#facilities">Find a facility</a></li>
+          <li><a href="#breathe">Self-care tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>The Authority</h3>
+        <ul>
+          <li><a href="#about">About us</a></li>
+          <li><a href="team.html">Our team</a></li>
+          <li><a href="#programmes">Programmes</a></li>
+          <li><a href="#news">News &amp; events</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="resources.html">Resources &amp; downloads</a></li>
+          <li><a href="research.html">Research &amp; ethics review</a></li>
+          <li><a href="volunteer.html">Volunteer with us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact us</h3>
+        <ul class="contact-list">
+          <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:info@mha.gov.gh">info@mha.gov.gh</a></li>
+          <li><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:0303964878">Authority line: 0303 964 878</a></li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><a href="https://www.google.com/maps/search/?api=1&query=Old+Race+Course+Rd%2C+Accra" target="_blank" rel="noopener noreferrer">Old Race Course Rd, Accra</a></li>
+        </ul>
       </div>
     </div>
-
-    <div class="footer-divider" aria-hidden="true"></div>
-    <div class="footer-bottom">© 2026 MHA All rights reserved.</div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Mental Health Authority, Ghana. All rights reserved.</p>
+      <a href="#top" class="to-top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+    </div>
   </footer>
 
-  <div class="donation-modal" id="donationPopup" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Donation information">
-    <div class="donation-modal-backdrop" data-close-donation="true"></div>
-    <div class="donation-modal-content">
-      <button class="donation-modal-close" type="button" id="closeDonationPopup" aria-label="Close donation popup">×</button>
-      <img class="donation-modal-image" src="img/Donations 2.jpg.jpeg" alt="Donation details" />
-    </div>
+  <!-- Mobile sticky help bar -->
+  <div class="mobile-help">
+    <a class="mh-call" href="tel:0800678678"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i> Call 0800 678 678</a>
+    <button type="button" class="mh-chat" data-open-chat aria-haspopup="dialog" aria-controls="chatPanel"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i> Chat</button>
   </div>
 
-  <script>
-    (function () {
-      const slider = document.querySelector('.hero-slider');
-      if (!slider) return;
-
-      const slides = Array.from(slider.querySelectorAll('.hero-slide'));
-      const prevBtn = slider.querySelector('.hero-nav-prev');
-      const nextBtn = slider.querySelector('.hero-nav-next');
-      const dots = Array.from(slider.querySelectorAll('.hero-dot'));
-
-      let currentIndex = 0;
-      const rotationInterval = 15000; // 6 seconds
-      let timerId = null;
-
-      function showSlide(index) {
-        if (!slides.length) return;
-
-        currentIndex = (index + slides.length) % slides.length;
-
-        slides.forEach((slide, i) => {
-          slide.classList.toggle('is-active', i === currentIndex);
-        });
-
-        dots.forEach((dot, i) => {
-          const isActive = i === currentIndex;
-          dot.classList.toggle('is-active', isActive);
-          dot.setAttribute('aria-selected', String(isActive));
-        });
-
-        resetTimer();
-      }
-
-      function nextSlide() {
-        showSlide(currentIndex + 1);
-      }
-
-      function prevSlide() {
-        showSlide(currentIndex - 1);
-      }
-
-      function resetTimer() {
-        if (timerId) {
-          clearInterval(timerId);
-        }
-        timerId = setInterval(nextSlide, rotationInterval);
-      }
-
-      if (nextBtn) {
-        nextBtn.addEventListener('click', nextSlide);
-      }
-
-      if (prevBtn) {
-        prevBtn.addEventListener('click', prevSlide);
-      }
-
-      dots.forEach((dot) => {
-        dot.addEventListener('click', function () {
-          const target = parseInt(this.getAttribute('data-target-slide'), 10);
-          if (!isNaN(target)) {
-            showSlide(target);
-          }
-        });
-      });
-
-      slides.forEach((slide) => {
-        const mainImg = slide.querySelector('.hero-main-img');
-        const thumbs = Array.from(slide.querySelectorAll('.hero-thumb'));
-        const thumbsRow = slide.querySelector('.hero-thumbs');
-
-        if (thumbsRow) {
-          thumbsRow.classList.toggle('is-two', thumbs.length === 2);
-        }
-
-        thumbs.forEach((thumb) => {
-          thumb.addEventListener('click', function () {
-            const newSrc = this.getAttribute('data-main-src');
-            if (newSrc && mainImg) {
-              mainImg.src = newSrc;
-
-              thumbs.forEach((t) => t.classList.remove('is-active'));
-              this.classList.add('is-active');
-            }
-          });
-        });
-      });
-
-      resetTimer();
-    })();
-
-
-    (function () {
-      const contactLinks = document.querySelectorAll('a[href="#footer"]');
-      const footerEl = document.getElementById('footer');
-      if (!contactLinks.length || !footerEl) return;
-
-      contactLinks.forEach((contactLink) => {
-        contactLink.addEventListener('click', (e) => {
-          e.preventDefault();
-
-          const startY = window.pageYOffset || document.documentElement.scrollTop;
-          const targetY =
-            (footerEl.getBoundingClientRect().top + startY) - 8; 
-
-          const distance = Math.abs(targetY - startY);
-          const durationMs = Math.max(1800, Math.min(2800, distance * 0.95)); 
-
-          function easeInOutCubic(t) {
-            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-          }
-
-          const startTime = performance.now();
-
-          
-          window.__mhaSuppressStatsCount = true;
-          setTimeout(() => {
-            window.__mhaSuppressStatsCount = false;
-          }, durationMs + 250);
-
-          function step(now) {
-            const t = Math.min(1, (now - startTime) / durationMs);
-            const eased = easeInOutCubic(t);
-            window.scrollTo(0, Math.round(startY + (targetY - startY) * eased));
-            if (t < 1) requestAnimationFrame(step);
-          }
-
-          requestAnimationFrame(step);
-          if (history && history.replaceState) {
-            history.replaceState(null, '', '#footer');
-          }
-        });
-      });
-    })();
-
-    
-    (function () {
-      const statsBand = document.querySelector('.stats-band');
-      const statNumberEls = document.querySelectorAll('.stat-number');
-      if (!statsBand || !statNumberEls.length) return;
-
-      const durationMs = 2000; 
-
-      function formatIntWithCommas(n) {
-        return new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(n);
-      }
-
-      function parseTarget(text) {
-        const trimmed = String(text || '').trim();
-        const hasPlus = trimmed.includes('+');
-        const digitsOnly = trimmed.replace(/[^0-9,]/g, '').replace(/,/g, '');
-        const target = parseInt(digitsOnly, 10);
-        return { target, hasPlus };
-      }
-
-      
-      const statTargets = Array.from(statNumberEls)
-        .map((el) => {
-          const raw = el.textContent.trim();
-
-        
-          if (!/^\d+$/.test(raw) && !/^\d+\+$/.test(raw)) return null;
-
-          const { target, hasPlus } = parseTarget(raw);
-          if (!Number.isFinite(target)) return null;
-
-          return { el, target, hasPlus };
-        })
-        .filter(Boolean);
-
-      if (!statTargets.length) return;
-
-      function startCounting() {
-        if (window.__mhaSuppressStatsCount) return;
-        const now = performance.now();
-        statTargets.forEach(({ el, target, hasPlus }) => {
-          el.textContent = hasPlus ? '0+' : '0';
-
-          const start = 0;
-          const startTime = now;
-
-          function tick(tNow) {
-            const t = Math.min(1, (tNow - startTime) / durationMs);
-            const current = Math.floor(start + (target - start) * t);
-            el.textContent = hasPlus ? `${formatIntWithCommas(current)}+` : formatIntWithCommas(current);
-
-            if (t < 1) requestAnimationFrame(tick);
-          }
-
-          requestAnimationFrame(tick);
-        });
-      }
-
-      
-      let wasIntersecting = false;
-      const observer = new IntersectionObserver(
-        (entries) => {
-          const entry = entries[0];
-          if (!entry) return;
-
-          const isIntersecting = entry.isIntersecting;
-          if (isIntersecting && !wasIntersecting) startCounting();
-          wasIntersecting = isIntersecting;
-        },
-        { threshold: 0.35 }
-      );
-
-      observer.observe(statsBand);
-    })();
-
-   
-    (function () {
-      const aboutLi = document.querySelector('.topbar nav ul li.dropdown');
-      if (!aboutLi) return;
-
-      aboutLi.addEventListener('mouseenter', () => {
-        aboutLi.classList.add('is-open');
-      });
-
-      aboutLi.addEventListener('mouseleave', () => {
-        aboutLi.classList.remove('is-open');
-      });
-    })();
-
-   
-    (function () {
-      const menuBtn = document.querySelector('.mobile-menu-btn');
-      const sidebar = document.getElementById('mobileSidebar');
-      const overlay = document.getElementById('mobileOverlay');
-      const closeBtn = document.querySelector('.mobile-close-btn');
-
-      if (!menuBtn || !sidebar || !overlay) return;
-
-      function openMenu() {
-        sidebar.classList.add('is-open');
-        overlay.classList.add('is-open');
-        sidebar.setAttribute('aria-hidden', 'false');
-        menuBtn.setAttribute('aria-expanded', 'true');
-      }
-
-      function closeMenu() {
-        sidebar.classList.remove('is-open');
-        overlay.classList.remove('is-open');
-        sidebar.setAttribute('aria-hidden', 'true');
-        menuBtn.setAttribute('aria-expanded', 'false');
-      }
-
-      menuBtn.addEventListener('click', openMenu);
-      closeBtn?.addEventListener('click', closeMenu);
-      overlay.addEventListener('click', closeMenu);
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeMenu();
-      });
-
-    
-      const aboutToggle = document.querySelector('.mobile-about-toggle');
-      const aboutDropdown = document.querySelector('.mobile-dropdown');
-      if (aboutToggle && aboutDropdown) {
-        aboutToggle.addEventListener('click', () => {
-          const isOpen = aboutDropdown.classList.toggle('is-open');
-          aboutToggle.setAttribute('aria-expanded', String(isOpen));
-        });
-      }
-
-      
-      sidebar.querySelectorAll('a').forEach((a) => {
-        a.addEventListener('click', closeMenu);
-      });
-    })();
-
-  
-    (function () {
-      const revealEls = document.querySelectorAll('.reveal-on-scroll');
-      if (!revealEls || !revealEls.length) return;
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            const el = entry.target;
-            el.classList.add('is-visible');
-            observer.unobserve(el); 
-          });
-        },
-        { threshold: 0.18 }
-      );
-
-      revealEls.forEach((el) => observer.observe(el));
-    })();
-
-    (function () {
-      const openBtn = document.getElementById('openDonationPopup');
-      const closeBtn = document.getElementById('closeDonationPopup');
-      const modal = document.getElementById('donationPopup');
-      if (!openBtn || !closeBtn || !modal) return;
-
-      function openModal() {
-        modal.classList.add('is-open');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeModal() {
-        modal.classList.remove('is-open');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-
-      openBtn.addEventListener('click', openModal);
-      closeBtn.addEventListener('click', closeModal);
-
-      modal.addEventListener('click', (e) => {
-        const target = e.target;
-        if (target && target instanceof HTMLElement && target.dataset.closeDonation === 'true') {
-          closeModal();
-        }
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-          closeModal();
-        }
-      });
-    })();
-  </script>
-  <script>
-    // Hide the World Mental Health Day banner once the event has passed
-    (function () {
-      var today = new Date();
-      document.querySelectorAll('[data-hide-from]').forEach(function (el) {
-        if (today >= new Date(el.getAttribute('data-hide-from') + 'T00:00:00')) el.hidden = true;
-      });
-    })();
-  </script>
-  <script>
-    // Google Analytics: record key actions (calls, lecture link, downloads, email, social)
-    (function () {
-      document.addEventListener('click', function (e) {
-        var a = e.target.closest ? e.target.closest('a[href]') : null;
-        if (!a || typeof gtag !== 'function') return;
-        var href = a.getAttribute('href') || '';
-        var name = null;
-        if (href.indexOf('tel:') === 0) name = 'call_click';
-        else if (href.indexOf('mailto:') === 0) name = 'email_click';
-        else if (/wa\.me|whatsapp/i.test(href)) name = 'whatsapp_click';
-        else if (/zoom\.us/i.test(href)) name = 'join_lecture_click';
-        else if (/\.pdf($|\?)/i.test(href)) name = 'file_download_click';
-        else if (/linkedin|facebook|instagram|youtube|x\.com|twitter|tiktok/i.test(href)) name = 'social_click';
-        if (!name) return;
-        gtag('event', name, {
-          link_url: href.indexOf('tel:') === 0 ? href.replace('tel:', '') : href.split('?')[0],
-          link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 100),
-          page_section: (a.closest('[id]') || {}).id || ''
-        });
-      });
-    })();
-  </script>
+  <!-- Donation flyer dialog -->
+  <dialog class="modal" id="donateDialog" aria-label="Donation flyer">
+    <button type="button" class="modal-close" data-close aria-label="Close">×</button>
+    <img src="assets/img/donate-flyer.webp" alt="Make a difference by supporting the Mental Health Authority. Donate via shortcode *725*6225# or MTN Mobile Money 0538806295, merchant number 433185." loading="lazy" />
+  </dialog>
+
+  <script src="assets/js/site.js?v=2026-10-08c" defer></script>
 </body>
 </html>
-
