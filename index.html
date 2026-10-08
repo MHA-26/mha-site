@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/css/site.css?v=2026-10-08" />
+  <link rel="stylesheet" href="assets/css/site.css?v=2026-10-08b" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -540,9 +540,10 @@
   </footer>
 
   <!-- Mobile sticky help bar -->
-  <a class="mobile-help" href="tel:0800678678">
-    <i class="fa-solid fa-phone-volume" aria-hidden="true"></i> Call 24/7 helpline · 0800 678 678
-  </a>
+  <div class="mobile-help">
+    <a class="mh-call" href="tel:0800678678"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i> Call 0800 678 678</a>
+    <button type="button" class="mh-chat" data-open-chat aria-haspopup="dialog" aria-controls="chatPanel"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i> Chat</button>
+  </div>
 
   <!-- Donation flyer dialog -->
   <dialog class="modal" id="donateDialog" aria-label="Donation flyer">
@@ -550,6 +551,6 @@
     <img src="assets/img/donate-flyer.webp" alt="Make a difference by supporting the Mental Health Authority. Donate via shortcode *725*6225# or MTN Mobile Money 0538806295, merchant number 433185." loading="lazy" />
   </dialog>
 
-  <script src="assets/js/site.js?v=2026-10-08" defer></script>
+  <script src="assets/js/site.js?v=2026-10-08b" defer></script>
 </body>
 </html>

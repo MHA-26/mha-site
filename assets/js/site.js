@@ -486,6 +486,116 @@
     });
   }
 
+  // ---------- Web chat (Chatwoot) ----------
+  // Fill these in from Chatwoot: Settings → Inboxes → (website inbox) → Configuration.
+  // baseUrl = your Chatwoot address (e.g. https://chat.mha.gov.gh or https://app.chatwoot.com)
+  const CHAT = { baseUrl: '', websiteToken: '' };
+  const chatReady = !!(CHAT.baseUrl && CHAT.websiteToken);
+  const ACTIVE_KEY = 'mha-chat-active';
+
+  function sessionGet(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
+  function sessionSet(k, v) { try { if (v === null) sessionStorage.removeItem(k); else sessionStorage.setItem(k, v); } catch (e) { /* ignore */ } }
+  function clearChatTraces() {
+    // Remove Chatwoot's conversation cookie and any stored widget data from this browser
+    document.cookie.split(';').forEach((c) => {
+      const name = c.split('=')[0].trim();
+      if (/^cw_/.test(name)) document.cookie = name + '=; Max-Age=0; path=/';
+    });
+    try { Object.keys(localStorage).filter((k) => /^cw_|chatwoot/i.test(k)).forEach((k) => localStorage.removeItem(k)); } catch (e) { /* ignore */ }
+    sessionSet(ACTIVE_KEY, null);
+  }
+  // A chat from an earlier visit leaves nothing behind unless it is still in progress in this tab
+  if (!sessionGet(ACTIVE_KEY)) clearChatTraces();
+
+  const chatUi = document.createElement('div');
+  chatUi.innerHTML = `
+    <button type="button" class="chat-launcher" data-open-chat aria-haspopup="dialog" aria-controls="chatPanel">
+      <i class="fa-solid fa-comment-dots" aria-hidden="true"></i> <span>Chat with us</span>
+    </button>
+    <div class="chat-panel" id="chatPanel" role="dialog" aria-labelledby="chatTitle" hidden>
+      <div class="chat-head">
+        <span class="chat-avatar" aria-hidden="true"><i class="fa-solid fa-headset"></i></span>
+        <div><p class="chat-title" id="chatTitle">Chat with the helpline</p><p class="chat-sub">Private and confidential</p></div>
+        <button type="button" class="chat-x" data-close-chat aria-label="Close">×</button>
+      </div>
+      <div class="chat-body">
+        <ul class="chat-points">
+          <li><i class="fa-solid fa-user-secret" aria-hidden="true"></i> You don’t have to give your name.</li>
+          <li><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Nothing is saved to your phone’s calls or WhatsApp. When you end the chat, it is cleared from this browser.</li>
+          <li><i class="fa-solid fa-user-nurse" aria-hidden="true"></i> Only the Mental Health Authority’s helpline team reads your messages.</li>
+          <li><i class="fa-solid fa-eye-slash" aria-hidden="true"></i> For extra privacy, use a private or incognito browser window.</li>
+        </ul>
+        <p class="chat-danger"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> In immediate danger? Call <a href="tel:0800678678">0800 678 678</a> now or go to the nearest hospital.</p>
+        ${chatReady
+          ? '<button type="button" class="btn btn-primary chat-start" data-start-chat>Start chat <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>'
+          : '<p class="chat-soon"><span class="status-pill"><span class="status-dot" aria-hidden="true"></span> Web chat launching soon</span></p>' +
+            '<div class="chat-alt"><a class="btn btn-primary" href="tel:0800678678"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call helpline</a>' +
+            '<a class="btn btn-soft" href="https://wa.me/233549045216" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a></div>'}
+      </div>
+    </div>
+    <div class="chat-controls" id="chatControls" hidden>
+      <button type="button" class="chat-ctrl" data-end-chat><i class="fa-solid fa-broom" aria-hidden="true"></i> End chat &amp; clear</button>
+      <button type="button" class="chat-ctrl chat-ctrl-exit" data-exit-chat><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i> Leave quickly</button>
+    </div>`;
+  document.body.appendChild(chatUi);
+
+  const chatPanel = document.getElementById('chatPanel');
+  const chatControls = document.getElementById('chatControls');
+  let chatLoading = null;
+
+  function loadChatwoot() {
+    if (chatLoading) return chatLoading;
+    chatLoading = new Promise((resolve, reject) => {
+      window.chatwootSettings = { hideMessageBubble: true, position: 'right', locale: 'en', type: 'standard', darkMode: 'light' };
+      window.addEventListener('chatwoot:ready', () => resolve(), { once: true });
+      const s = document.createElement('script');
+      s.src = CHAT.baseUrl.replace(/\/$/, '') + '/packs/js/sdk.js';
+      s.async = true;
+      s.onload = () => window.chatwootSDK.run({ websiteToken: CHAT.websiteToken, baseUrl: CHAT.baseUrl });
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+    return chatLoading;
+  }
+  function openPanel() { chatPanel.hidden = false; chatPanel.querySelector('[data-close-chat]').focus(); }
+  function closePanel() { chatPanel.hidden = true; }
+  function startChat() {
+    closePanel();
+    sessionSet(ACTIVE_KEY, '1');
+    chatControls.hidden = false;
+    if (typeof window.gtag === 'function') window.gtag('event', 'webchat_start');
+    loadChatwoot().then(() => window.$chatwoot && window.$chatwoot.toggle('open')).catch(() => {
+      chatControls.hidden = true;
+      sessionSet(ACTIVE_KEY, null);
+      openPanel();
+      chatPanel.querySelector('.chat-body').insertAdjacentHTML('afterbegin', '<p class="chat-error">The chat could not connect. Please call 0800 678 678 or use WhatsApp.</p>');
+    });
+  }
+  function endChat(thenLeave) {
+    if (window.$chatwoot) { try { window.$chatwoot.toggle('close'); window.$chatwoot.reset(); } catch (e) { /* ignore */ } }
+    clearChatTraces();
+    chatControls.hidden = true;
+    if (thenLeave) window.location.replace('https://www.google.com');
+  }
+
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-open-chat]')) {
+      e.preventDefault();
+      if (sessionGet(ACTIVE_KEY) && window.$chatwoot) { window.$chatwoot.toggle('open'); return; }
+      openPanel();
+    } else if (e.target.closest('[data-close-chat]')) closePanel();
+    else if (e.target.closest('[data-start-chat]')) startChat();
+    else if (e.target.closest('[data-end-chat]')) endChat(false);
+    else if (e.target.closest('[data-exit-chat]')) endChat(true);
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !chatPanel.hidden) closePanel(); });
+
+  // Continue a chat that is still in progress in this tab (e.g. after moving to another page)
+  if (chatReady && sessionGet(ACTIVE_KEY)) {
+    chatControls.hidden = false;
+    loadChatwoot();
+  }
+
   // ---------- Footer year ----------
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
