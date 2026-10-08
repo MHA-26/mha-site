@@ -487,9 +487,14 @@
   }
 
   // ---------- Web chat (Chatwoot) ----------
-  // Fill these in from Chatwoot: Settings → Inboxes → (website inbox) → Configuration.
-  // baseUrl = your Chatwoot address (e.g. https://chat.mha.gov.gh or https://app.chatwoot.com)
-  const CHAT = { baseUrl: '', websiteToken: '' };
+  // Values come from Chatwoot: Settings → Inboxes → (website inbox) → Configuration.
+  // baseUrl = the Chatwoot address (e.g. https://chat.mha.gov.gh or https://app.chatwoot.com).
+  // CHAT_LIVE: MHA's own inbox, used on the public site. Leave empty until it exists ("launching soon").
+  // CHAT_TEST: temporary test inbox (mnemosmed.com), used ONLY when the site runs on this computer.
+  const CHAT_LIVE = { baseUrl: '', websiteToken: '' };
+  const CHAT_TEST = { baseUrl: 'https://app.chatwoot.com', websiteToken: 'AUzLrySwMwNMgpHGF7efGUqS' };
+  const isLocalPreview = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
+  const CHAT = isLocalPreview ? CHAT_TEST : CHAT_LIVE;
   const chatReady = !!(CHAT.baseUrl && CHAT.websiteToken);
   const ACTIVE_KEY = 'mha-chat-active';
 
@@ -547,7 +552,9 @@
     if (chatLoading) return chatLoading;
     chatLoading = new Promise((resolve, reject) => {
       window.chatwootSettings = { hideMessageBubble: true, position: 'right', locale: 'en', type: 'standard', darkMode: 'light' };
-      window.addEventListener('chatwoot:ready', () => resolve(), { once: true });
+      // If the chat service doesn't respond (e.g. wrong token, network down), fall back after 12 seconds
+      const timer = setTimeout(() => { chatLoading = null; reject(new Error('chat timeout')); }, 12000);
+      window.addEventListener('chatwoot:ready', () => { clearTimeout(timer); resolve(); }, { once: true });
       const s = document.createElement('script');
       s.src = CHAT.baseUrl.replace(/\/$/, '') + '/packs/js/sdk.js';
       s.async = true;
